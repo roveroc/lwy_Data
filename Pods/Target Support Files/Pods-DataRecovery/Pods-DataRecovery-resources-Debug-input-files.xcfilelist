@@ -1,0 +1,10 @@
+${PODS_ROOT}/Target Support Files/Pods-DataRecovery/Pods-DataRecovery-resources.sh
+${PODS_ROOT}/GKNavigationBarViewController/GKNavigationBarViewController/GKNavigationBarViewController.bundle
+${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/PYPhotoBrowser/PYPhotoBrowser/PYPhotosView.bundle
+${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle
+${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj
+${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj
+${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist
+${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist
