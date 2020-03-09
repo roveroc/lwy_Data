@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		30E9A4D52416235600A8B6CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9A4D42416235600A8B6CE /* AppDelegate.m */; };
-		30E9A4D82416235600A8B6CE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9A4D72416235600A8B6CE /* SceneDelegate.m */; };
 		30E9A4DB2416235600A8B6CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9A4DA2416235600A8B6CE /* ViewController.m */; };
 		30E9A4DE2416235600A8B6CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E9A4DC2416235600A8B6CE /* Main.storyboard */; };
 		30E9A4E12416235600A8B6CE /* DataRecovery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30E9A4DF2416235600A8B6CE /* DataRecovery.xcdatamodeld */; };
@@ -51,8 +50,6 @@
 		30E9A4D02416235600A8B6CE /* DataRecovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataRecovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E9A4D32416235600A8B6CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30E9A4D42416235600A8B6CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		30E9A4D62416235600A8B6CE /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		30E9A4D72416235600A8B6CE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		30E9A4D92416235600A8B6CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		30E9A4DA2416235600A8B6CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		30E9A4DD2416235600A8B6CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,8 +141,6 @@
 			children = (
 				30E9A4D32416235600A8B6CE /* AppDelegate.h */,
 				30E9A4D42416235600A8B6CE /* AppDelegate.m */,
-				30E9A4D62416235600A8B6CE /* SceneDelegate.h */,
-				30E9A4D72416235600A8B6CE /* SceneDelegate.m */,
 				30E9A4D92416235600A8B6CE /* ViewController.h */,
 				30E9A4DA2416235600A8B6CE /* ViewController.m */,
 				30E9A4DC2416235600A8B6CE /* Main.storyboard */,
@@ -467,7 +462,6 @@
 				30E9A550241632AB00A8B6CE /* UIColor+JM.m in Sources */,
 				30E9A509241626A800A8B6CE /* BaseTabBarController.m in Sources */,
 				30E9A53E2416313700A8B6CE /* GroupViewController.m in Sources */,
-				30E9A4D82416235600A8B6CE /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
