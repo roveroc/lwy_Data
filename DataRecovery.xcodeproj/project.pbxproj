@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
 		30E649132417332300AF5338 /* tempimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E649122417332300AF5338 /* tempimage.png */; };
+		30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E64917241763C300AF5338 /* DetailOneViewController.m */; };
+		30E6491A241763C300AF5338 /* DetailOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E64918241763C300AF5338 /* DetailOneViewController.xib */; };
+		30E6491F2417654E00AF5338 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6491E2417654E00AF5338 /* ScreenView.m */; };
 		30E9A4D52416235600A8B6CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9A4D42416235600A8B6CE /* AppDelegate.m */; };
 		30E9A4DB2416235600A8B6CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9A4DA2416235600A8B6CE /* ViewController.m */; };
 		30E9A4DE2416235600A8B6CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E9A4DC2416235600A8B6CE /* Main.storyboard */; };
@@ -52,6 +55,11 @@
 		30E6490E2417288900AF5338 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		30E6490F2417288900AF5338 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		30E649122417332300AF5338 /* tempimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempimage.png; sourceTree = "<group>"; };
+		30E64916241763C300AF5338 /* DetailOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailOneViewController.h; sourceTree = "<group>"; };
+		30E64917241763C300AF5338 /* DetailOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailOneViewController.m; sourceTree = "<group>"; };
+		30E64918241763C300AF5338 /* DetailOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailOneViewController.xib; sourceTree = "<group>"; };
+		30E6491D2417654E00AF5338 /* ScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
+		30E6491E2417654E00AF5338 /* ScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		30E9A4D02416235600A8B6CE /* DataRecovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataRecovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E9A4D32416235600A8B6CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30E9A4D42416235600A8B6CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +130,40 @@
 				30E649122417332300AF5338 /* tempimage.png */,
 			);
 			path = ImageResouce;
+			sourceTree = "<group>";
+		};
+		30E649142417630000AF5338 /* DetailOneViewController */ = {
+			isa = PBXGroup;
+			children = (
+				30E64916241763C300AF5338 /* DetailOneViewController.h */,
+				30E64917241763C300AF5338 /* DetailOneViewController.m */,
+				30E64918241763C300AF5338 /* DetailOneViewController.xib */,
+			);
+			path = DetailOneViewController;
+			sourceTree = "<group>";
+		};
+		30E649152417637600AF5338 /* DetailTowOneViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailTowOneViewController;
+			sourceTree = "<group>";
+		};
+		30E6491B2417651C00AF5338 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				30E6491C2417652B00AF5338 /* SceeneView */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		30E6491C2417652B00AF5338 /* SceeneView */ = {
+			isa = PBXGroup;
+			children = (
+				30E6491D2417654E00AF5338 /* ScreenView.h */,
+				30E6491E2417654E00AF5338 /* ScreenView.m */,
+			);
+			path = SceeneView;
 			sourceTree = "<group>";
 		};
 		30E9A4C72416235600A8B6CE = {
@@ -239,6 +281,9 @@
 		30E9A518241628F300A8B6CE /* MainController */ = {
 			isa = PBXGroup;
 			children = (
+				30E6491B2417651C00AF5338 /* CellView */,
+				30E649152417637600AF5338 /* DetailTowOneViewController */,
+				30E649142417630000AF5338 /* DetailOneViewController */,
 				30E9A51D2416297900A8B6CE /* MainViewController.h */,
 				30E9A51E2416297900A8B6CE /* MainViewController.m */,
 				30E9A51F2416297900A8B6CE /* MainViewController.xib */,
@@ -397,6 +442,7 @@
 			files = (
 				30E9A50A241626A800A8B6CE /* BaseTabBarController.xib in Resources */,
 				30E9A4E62416236800A8B6CE /* LaunchScreen.storyboard in Resources */,
+				30E6491A241763C300AF5338 /* DetailOneViewController.xib in Resources */,
 				30E9A52324162AA400A8B6CE /* Podfile in Resources */,
 				30E9A53F2416313700A8B6CE /* GroupViewController.xib in Resources */,
 				30E9A5112416288F00A8B6CE /* BaseNavigationController.xib in Resources */,
@@ -468,6 +514,8 @@
 			files = (
 				30E9A54F241632AB00A8B6CE /* UIView+JM.m in Sources */,
 				30E9A4E92416236800A8B6CE /* main.m in Sources */,
+				30E6491F2417654E00AF5338 /* ScreenView.m in Sources */,
+				30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */,
 				30E9A515241628B700A8B6CE /* BaseViewController.m in Sources */,
 				30E9A5102416288F00A8B6CE /* BaseNavigationController.m in Sources */,
 				30E9A4DB2416235600A8B6CE /* ViewController.m in Sources */,

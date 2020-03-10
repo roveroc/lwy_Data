@@ -22,6 +22,8 @@
     [super viewDidLoad];
  
     self.isShowLiftBack = YES;
+    
+    self.view.backgroundColor = [UIColor colorWithHexString:@"0xF5F5F5"];
 
 }
 

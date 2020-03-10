@@ -10,6 +10,7 @@
 #import "BMUtilMacro.h"
 #import <Masonry.h>
 #import "UIColor+JM.h"
+#import "DetailOneViewController.h"
 
 #define BigImageHeight  300
 
@@ -93,7 +94,8 @@
     switch (tag) {
         case 100:
         {
-            
+            DetailOneViewController *Com = [[DetailOneViewController alloc] init];
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 101:
