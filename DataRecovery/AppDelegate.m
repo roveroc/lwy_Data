@@ -33,8 +33,37 @@
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-
-    self.tabbar = [[BaseTabBarController alloc]init];
+    
+    MainViewController  *mainCom    = [[MainViewController  alloc] init];
+    GroupViewController *groupCom   = [[GroupViewController alloc] init];
+    NewsViewController  *newsCom    = [[NewsViewController  alloc] init];
+    OrderViewController *orderCom   = [[OrderViewController alloc] init];
+    
+    BaseNavigationController *mainNav  = [self addChildViewController:mainCom
+                                                                title:@"首页"
+                                                           imageNamed:@"main_disselected"
+                                                        selectedImage:@"main_selected"];
+    
+    BaseNavigationController *groupNav = [self addChildViewController:groupCom
+                                                                title:@"团队"
+                                                            imageNamed:@"group_disselected"
+                                                        selectedImage:@"group_selected"];
+    
+    BaseNavigationController *newsNav  = [self addChildViewController:newsCom
+                                                                title:@"动态"
+                                                           imageNamed:@"news_disselected"
+                                                        selectedImage:@"news_selected"];
+    
+    BaseNavigationController *orderNav = [self addChildViewController:orderCom
+                                                                title:@"订单"
+                                                           imageNamed:@"order_disselected"
+                                                        selectedImage:@"order_selected"];
+    
+    NSArray *navArray = [[NSArray alloc] initWithObjects:mainNav,groupNav,newsNav,orderNav, nil];
+    
+    self.tabbar = [[BaseTabBarController alloc] init];
+    [self.tabbar setViewControllers:navArray];
+    
     self.window.rootViewController = self.tabbar;
         
     [self.window makeKeyAndVisible];
@@ -42,6 +71,22 @@
     return YES;
 }
 
+
+- (BaseNavigationController *)addChildViewController:(UIViewController *)vc title:(NSString *)title imageNamed:(NSString *)imageNamed selectedImage:(NSString *)selImage
+{
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
+    // 如果同时有navigationbar 和 tabbar的时候最好分别设置它们的title
+    vc.navigationItem.title = title;
+    nav.tabBarItem.title = title;
+    
+    [nav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:2.0 / 255.0 green:180.0 / 255.0 blue:168.0 / 255.0 alpha:1]} forState:UIControlStateSelected];
+  
+    [nav.tabBarItem setImage:[[UIImage imageNamed:imageNamed] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    [nav.tabBarItem setSelectedImage:[[UIImage imageNamed:selImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    return nav;
+}
 
 
 
