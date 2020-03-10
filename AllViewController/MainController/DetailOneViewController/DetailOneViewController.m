@@ -22,6 +22,10 @@
 @property (nonatomic, strong) UIView      *serviceMoveView_1;
 @property (nonatomic, strong) UIView      *serviceMoveView_2;
 
+@property (nonatomic, strong) NSArray     *problemArray;
+@property (nonatomic, strong) NSArray     *subProblemArray;
+@property (nonatomic, strong) NSMutableArray *expandArray;
+
 @end
 
 @implementation DetailOneViewController
@@ -46,6 +50,20 @@
     self.serviceMoveView_2 = [sview getServiceMoveViewWithImage:@"item1" name:@"10号工程师" content:@"完成一次视频恢复工作" time:8];
     
     
+    self.problemArray = [[NSArray alloc] initWithObjects:@"我可以恢复亲友的微信吗",
+                                                         @"聊天记录里面的图片和视频能恢复吗",
+                                                         @"数据丢失多长时间可以恢复",
+                                                         @"恢复数据大概需要多长时间",
+                                                         @"工程师帮我分析数据安全吗",nil];
+    self.subProblemArray = [[NSArray alloc] initWithObjects:@"------我可以恢复亲友的微信吗------",
+                                                            @"------聊天记录里面的图片和视频能恢复吗------",
+                                                            @"------数据丢失多长时间可以恢复-------",
+                                                            @"------恢复数据大概需要多长时间-------",
+                                                            @"------工程师帮我分析数据安全吗-------",nil];
+    self.expandArray = [[NSMutableArray alloc] initWithObjects:@"0",@"0",@"0",@"0",@"0",nil];
+    
+    
+    
     CGFloat height =0;
     if (IS_IPHONE_X) {
         height = AdaptedHeight(82);
@@ -57,9 +75,10 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT-height)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+//    self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor colorWithHexString:@"0xF5F5F5"];
+//    self.tableView.backgroundColor = [UIColor colorWithHexString:@"0xF5F5F5"];
     [self.view addSubview:self.tableView];
     
     
@@ -72,6 +91,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
     if (!cell)
     {
         cell = [[UITableViewCell alloc] init];
@@ -105,6 +125,26 @@
             }
         }
     }
+    if(indexPath.section == 3)
+    {
+        UIImage * icon = [UIImage imageNamed:@"item2"];
+        CGSize itemSize = CGSizeMake(10, 10);
+        UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+        CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+        [icon drawInRect:imageRect];
+        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+        UIGraphicsEndImageContext();//*3
+        
+        cell.textLabel.text = [self.problemArray objectAtIndex:indexPath.row];
+    }
+    
+    //设置点击是透明色
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor clearColor];
+    bgColorView.layer.masksToBounds = YES;
+    cell.selectedBackgroundView = bgColorView;
+    
+    
     return cell;
 }
 
@@ -130,14 +170,44 @@
         else if(indexPath.row == 2)
             return self.serviceMoveView_2.frame.size.height;
     }
+    else if(indexPath.section == 3)
+    {
+        int v = [[self.expandArray objectAtIndex:indexPath.row] intValue];
+        if(v == 0)
+            return 55;
+        else if(v == 1)
+            return 100;
+    }
     return 80;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(indexPath.section == 3)
+    {
+        int v = [[self.expandArray objectAtIndex:indexPath.row] intValue];
+        if(v == 0){
+            [self.expandArray replaceObjectAtIndex:indexPath.row withObject:@"1"];
+        }
+        else
+        {
+            [self.expandArray replaceObjectAtIndex:indexPath.row withObject:@"0"];
+        }
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 2)
     {
         return 3;
+    }
+    else if(section == 3)
+    {
+        return self.problemArray.count;
     }
     return 1;
 }
