@@ -123,22 +123,29 @@
             break;
         case 104:
         {
-            
+            DetailModeTowViewController *Com = [[DetailModeTowViewController alloc] init];
+            Com.functionNo = 5;
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 105:
         {
-            
+            DetailModeTowViewController *Com = [[DetailModeTowViewController alloc] init];
+            Com.functionNo = 6;
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 106:
         {
-            
+            DetailModeTowViewController *Com = [[DetailModeTowViewController alloc] init];
+            Com.functionNo = 7;
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 107:
         {
             DetailModeTowViewController *Com = [[DetailModeTowViewController alloc] init];
+            Com.functionNo = 8;
             [self.navigationController pushViewController:Com animated:YES];
         }
             break;

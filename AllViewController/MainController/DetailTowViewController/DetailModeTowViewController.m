@@ -28,26 +28,8 @@
     
     self.title = @"服务详情";
     
-    PriceModel *model_1 = [[PriceModel alloc] init];
-    model_1.imgString = @"item1";
-    model_1.titleString = @"夜间加急-专家通宵服务 ￥288";
-    model_1.titleColorString = @"EEAD0E";
-    model_1.msgString = @"       五游APP是北京西游国际旅行社有限公司旗下的分享平台，用户在平台上分享旅游体验和旅游产品。平台以接待国内游客为主，主做国内旅游业务，拥有百余名熟知近二十种语言的专兼";
-                  
     
-    PriceModel *model_2 = [[PriceModel alloc] init];
-    model_2.imgString = @"item2";
-    model_2.titleString = @"加急处理-专家立刻处理 ￥188";
-    model_2.titleColorString = @"1E90FF";
-    model_2.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,讲究深度";
     
-    PriceModel *model_3 = [[PriceModel alloc] init];
-    model_3.imgString = @"item3";
-    model_3.titleString = @"排队处理-按顺序处理 ￥88";
-    model_3.titleColorString = @"8A2BE2";
-    model_3.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,组织方式";
-    
-    self.msgArray = [[NSMutableArray alloc] initWithObjects:model_1,model_2,model_3, nil];
     
     self.sview = [[ScreenView alloc] init];
     
@@ -58,8 +40,116 @@
     {
         height = AdaptedHeight(68);
     }
-    
-    UIView *topView = [self.sview getTopViewWithImage:@"item4" title:@"清除手机数据" msg:@"彻底清除垃圾，还您完美流畅手，真正棒真正棒真正棒真正棒真正棒真正棒真正棒"];
+
+    UIView *topView;
+    switch (self.functionNo) {
+        case 5:
+        {
+            topView = [self.sview getTopViewWithImage:@"item5" title:@"QQ恢复" msg:@"1、无需密码查看聊天记录 \n 2、无需密码查看聊天记录"];
+            
+            PriceModel *model_1 = [[PriceModel alloc] init];
+            model_1.imgString = @"item1";
+            model_1.titleString = @"夜间加急-专家通宵服务 ￥288";
+            model_1.titleColorString = @"EEAD0E";
+            model_1.msgString = @"       五游APP是北京西游国际旅行社有限公司旗下的分享平台，用户在平台上分享旅游体验和旅游产品。平台以接待国内游客为主，主做国内旅游业务，拥有百余名熟知近二十种语言的专兼";
+                          
+            
+            PriceModel *model_2 = [[PriceModel alloc] init];
+            model_2.imgString = @"item2";
+            model_2.titleString = @"加急处理-专家立刻处理 ￥188";
+            model_2.titleColorString = @"1E90FF";
+            model_2.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,讲究深度";
+            
+            PriceModel *model_3 = [[PriceModel alloc] init];
+            model_3.imgString = @"item3";
+            model_3.titleString = @"排队处理-按顺序处理 ￥88";
+            model_3.titleColorString = @"8A2BE2";
+            model_3.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,组织方式";
+            
+            self.msgArray = [[NSMutableArray alloc] initWithObjects:model_1,model_2,model_3, nil];
+        }
+            break;
+        case 6:
+        {
+            topView = [self.sview getTopViewWithImage:@"item6" title:@"电脑数据恢复" msg:@"老五最牛逼-电脑数据恢复"];
+            
+            PriceModel *model_1 = [[PriceModel alloc] init];
+            model_1.imgString = @"item1";
+            model_1.titleString = @"夜间加急-专家通宵服务 ￥288";
+            model_1.titleColorString = @"EEAD0E";
+            model_1.msgString = @"       五游APP是北京西游国际旅行社有限公司旗下的分享平台，用户在平台上分享旅游体验和旅游产品。平台以接待国内游客为主，主做国内旅游业务，拥有百余名熟知近二十种语言的专兼";
+                          
+            
+            PriceModel *model_2 = [[PriceModel alloc] init];
+            model_2.imgString = @"item2";
+            model_2.titleString = @"加急处理-专家立刻处理 ￥188";
+            model_2.titleColorString = @"1E90FF";
+            model_2.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,讲究深度";
+            
+            PriceModel *model_3 = [[PriceModel alloc] init];
+            model_3.imgString = @"item3";
+            model_3.titleString = @"排队处理-按顺序处理 ￥88";
+            model_3.titleColorString = @"8A2BE2";
+            model_3.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,组织方式";
+            
+            self.msgArray = [[NSMutableArray alloc] initWithObjects:model_1,model_2,model_3, nil];
+        }
+            break;
+        case 7:
+        {
+            topView = [self.sview getTopViewWithImage:@"item7" title:@"清除手机数据" msg:@"清除手机数据 -老五最牛逼-电脑"];
+            
+            PriceModel *model_1 = [[PriceModel alloc] init];
+            model_1.imgString = @"item1";
+            model_1.titleString = @"夜间加急-专家通宵服务 ￥288";
+            model_1.titleColorString = @"EEAD0E";
+            model_1.msgString = @"       五游APP是北京西游国际旅行社有限公司旗下的分享平台，用户在平台上分享旅游体验和旅游产品。平台以接待国内游客为主，主做国内旅游业务，拥有百余名熟知近二十种语言的专兼";
+                          
+            
+            PriceModel *model_2 = [[PriceModel alloc] init];
+            model_2.imgString = @"item2";
+            model_2.titleString = @"加急处理-专家立刻处理 ￥188";
+            model_2.titleColorString = @"1E90FF";
+            model_2.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,讲究深度";
+            
+            PriceModel *model_3 = [[PriceModel alloc] init];
+            model_3.imgString = @"item3";
+            model_3.titleString = @"排队处理-按顺序处理 ￥88";
+            model_3.titleColorString = @"8A2BE2";
+            model_3.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,组织方式";
+            
+            self.msgArray = [[NSMutableArray alloc] initWithObjects:model_1,model_2,model_3, nil];
+        }
+            break;
+        case 8:
+        {
+            topView = [self.sview getTopViewWithImage:@"item8" title:@"综合套餐" msg:@"综合套餐-老五最牛逼-综合套餐"];
+            
+            PriceModel *model_1 = [[PriceModel alloc] init];
+            model_1.imgString = @"item1";
+            model_1.titleString = @"夜间加急-专家通宵服务 ￥1288";
+            model_1.titleColorString = @"EEAD0E";
+            model_1.msgString = @"       五游APP是北京西游国际旅行社有限公司旗下的分享平台，用户在平台上分享旅游体验和旅游产品。平台以接待国内游客为主，主做国内旅游业务，拥有百余名熟知近二十种语言的专兼";
+                          
+            
+            PriceModel *model_2 = [[PriceModel alloc] init];
+            model_2.imgString = @"item2";
+            model_2.titleString = @"加急处理-专家立刻处理 ￥888";
+            model_2.titleColorString = @"1E90FF";
+            model_2.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,讲究深度";
+            
+            PriceModel *model_3 = [[PriceModel alloc] init];
+            model_3.imgString = @"item3";
+            model_3.titleString = @"排队处理-按顺序处理 ￥688";
+            model_3.titleColorString = @"8A2BE2";
+            model_3.msgString = @"       具备原创独家线路策划能力，网站线路为原创独立研发；讲究深度体验、以其独特旅游组织方式,组织方式";
+            
+            self.msgArray = [[NSMutableArray alloc] initWithObjects:model_1,model_2,model_3, nil];
+        }
+            break;
+        default:
+            break;
+    }
     
     [self.view addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {

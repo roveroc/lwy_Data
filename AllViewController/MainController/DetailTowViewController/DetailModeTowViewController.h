@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailModeTowViewController : BaseViewController
 
+@property (nonatomic, assign) int functionNo;       //是哪个功能界面
+
 @end
 
 NS_ASSUME_NONNULL_END
