@@ -24,6 +24,8 @@
 @property (nonatomic, strong) UIView            *serviceMoveView_1;
 @property (nonatomic, strong) UIView            *serviceMoveView_2;
 
+@property (nonatomic, strong) NSArray           *titleArray;
+@property (nonatomic, strong) NSArray           *colorArray;
 @property (nonatomic, strong) NSArray           *problemArray;
 @property (nonatomic, strong) NSArray           *subProblemArray;
 @property (nonatomic, strong) NSMutableArray    *expandArray;
@@ -34,38 +36,102 @@
 
 @implementation DetailOneViewController
 
+- (void)initInterfaceData
+{
+    switch (self.functionNo) {
+        case 1:
+        {
+            self.priceView = [self.sview getPriceViewWithPrice:88 oldPriceValue:188 image:@"item1" title:@"恢复微信消息" height:100];
+            self.titleArray = [[NSArray alloc] initWithObjects:@"无密码查看聊天记录",@"微信数据库损坏修复",@"微信联系人修复",@"微信聊天记录恢复",@"撤回/群聊 消息恢复",@"微信转账记录恢复",@"朋友圈/收藏 恢复",@"微信多开(分身)被封",@"备份微信数据", nil];
+            self.colorArray = [[NSArray alloc] initWithObjects:@"FF69B4",@"B4EEB4",@"1E90FF",@"40E0D0",@"FFD700",@"CD2990",@"FF6A6A",@"E9967A",@"EE82EE", nil];
+            self.problemArray = [[NSArray alloc] initWithObjects:@"我可以恢复亲友的微信吗",
+                                                                 @"聊天记录里面的图片和视频能恢复吗",
+                                                                 @"数据丢失多长时间可以恢复",
+                                                                 @"恢复数据大概需要多长时间",
+                                                                 @"工程师帮我分析数据安全吗",nil];
+            self.subProblemArray = [[NSArray alloc] initWithObjects:@"------我可以恢复亲友的微信吗------",
+                                                                    @"------聊天记录里面的图片和视频能恢复吗------,------聊天记录里面的图片和视频能恢复吗------------聊天记录里面的图片和视频能恢复吗------",
+                                                                    @"------数据丢失多长时间可以恢复-------",
+                                                                    @"------恢复数据大概需要多长时间-------",
+                                                                    @"------工程师帮我分析数据安全吗-------",nil];
+        }
+            break;
+        case 2:
+        {
+            self.priceView = [self.sview getPriceViewWithPrice:99 oldPriceValue:199 image:@"item2" title:@"加回微信好友" height:100];
+            self.titleArray = [[NSArray alloc] initWithObjects:@"加回微信好友/wxid加好友",@"好友聊天记录恢复",@"备份好友聊天记录", nil];
+            self.colorArray = [[NSArray alloc] initWithObjects:@"CD2990",@"FF6A6A",@"EE82EE", nil];
+            self.problemArray = [[NSArray alloc] initWithObjects:@"我可以查看亲友的微信好友吗",
+                                                                 @"好友删了怎么恢复",
+                                                                 @"几年前删除的好友可以加回吗",
+                                                                 @"微信好友删了怎么加",
+                                                                 @"工程师帮我分析数据安全吗",nil];
+            self.subProblemArray = [[NSArray alloc] initWithObjects:@"------我可以查看亲友的微信好友吗------",
+                                                                    @"------好友删了怎么恢复------,------好友删了怎么恢复------------聊天记录里面的图片和好友删了怎么恢复吗------",
+                                                                    @"------数据丢失多长时间可以恢复-------",
+                                                                    @"------信好友删了怎么加-------",
+                                                                    @"------工程师帮我分析数据数据安全吗-------",nil];
+        }
+            break;
+        case 3:
+        {
+            self.priceView = [self.sview getPriceViewWithPrice:199 oldPriceValue:399 image:@"item3" title:@"清除微信记录" height:100];
+            self.titleArray = [[NSArray alloc] initWithObjects:@"清除微信记录 1",@"清除微信记录 2",@"清除微信记录 3",@"清除微信记录 4",@"清除微信记录 5", nil];
+            self.colorArray = [[NSArray alloc] initWithObjects:@"FF69B4",@"CD2990",@"EE82EE",@"FF69B4",@"E9967A", nil];
+            self.problemArray = [[NSArray alloc] initWithObjects:@"清除微信记录  -- 好友吗",
+                                                                 @"清除微信记录 -- 复",
+                                                                 @"清除微信记录 -- 以加回吗",
+                                                                 @"清除微信记录 -- 么加",
+                                                                 @"清除微信记录 -- 吗",nil];
+            self.subProblemArray = [[NSArray alloc] initWithObjects:@"------我可以查看亲友的微信好友吗------",
+                                                                    @"------好友删了怎么恢复------,------好友删了怎么恢复------------聊天记录里面的图片和好友删了怎么恢复吗------",
+                                                                    @"------数据丢失多长时间可以恢复-------",
+                                                                    @"------信好友删了怎么加-------",
+                                                                    @"------工程师帮我分析数据数据安全吗-------",nil];
+        }
+            break;
+        case 4:
+        {
+            self.priceView = [self.sview getPriceViewWithPrice:199 oldPriceValue:399 image:@"item4" title:@"照片视频恢复" height:100];
+            self.titleArray = [[NSArray alloc] initWithObjects:@"照片视频恢复 1",@"照片视频恢复 2",@"照片视频恢复 3",@"照片视频恢复 4",@"照片视频恢复 5", @"照片视频恢复 6",nil];
+            self.colorArray = [[NSArray alloc] initWithObjects:@"FFD700",@"CD2990",@"FF6A6A",@"FF69B4",@"E9967A",@"FF69B4", nil];
+            self.problemArray = [[NSArray alloc] initWithObjects:@"照片视频恢复  -- 好友吗",
+                                                                 @"照片视频恢复 -- 复",
+                                                                 @"照片视频恢复 -- 以加回吗",
+                                                                 @"照片视频恢复 -- 么加",
+                                                                 @"照片视频恢复 -- 吗",nil];
+            self.subProblemArray = [[NSArray alloc] initWithObjects:@"------我可以查看亲友的微信好友吗------",
+                                                                    @"------好友删了怎么恢复------,------好友删了怎么恢复------------聊天记录里面的图片和好友删了怎么恢复吗------",
+                                                                    @"------数据丢失多长时间可以恢复-------",
+                                                                    @"------信好友删了怎么加-------",
+                                                                    @"------工程师帮我分析数据数据安全吗-------",nil];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"服务详情";
     
     self.sview = [[ScreenView alloc] init];
+    [self initInterfaceData];
+            
     
-    self.priceView = [self.sview getPriceViewWithPrice:88 oldPriceValue:188 image:@"item8" title:@"恢复微信消息" height:100];
-    
-    NSArray *titleArray = [[NSArray alloc] initWithObjects:@"无密码查看聊天记录",@"微信数据库损坏修复",@"微信联系人修复",@"微信聊天记录恢复",@"撤回/群聊 消息恢复",@"微信转账记录恢复",@"朋友圈/收藏 恢复",@"微信多开(分身)被封",@"备份微信数据", nil];
-    NSArray *colorArray = [[NSArray alloc] initWithObjects:@"FF69B4",@"B4EEB4",@"1E90FF",@"40E0D0",@"FFD700",@"CD2990",@"FF6A6A",@"E9967A",@"EE82EE", nil];
-    
-    
-    self.sview.itemArray = titleArray;
-    self.sview.itemBackColorArray = colorArray;
+    self.sview.itemArray = self.titleArray;
+    self.sview.itemBackColorArray = self.colorArray;
     self.screenView = [self.sview getScreenView];
     
     self.serviceView = [self.sview getServiceView];
     self.serviceMoveView_1 = [self.sview getServiceMoveViewWithImage:@"item7" name:@"1号工程师" content:@"完成一次微信数据恢复工作" time:2];
     self.serviceMoveView_2 = [self.sview getServiceMoveViewWithImage:@"item1" name:@"10号工程师" content:@"完成一次视频恢复工作" time:8];
     
-    
-    self.problemArray = [[NSArray alloc] initWithObjects:@"我可以恢复亲友的微信吗",
-                                                         @"聊天记录里面的图片和视频能恢复吗",
-                                                         @"数据丢失多长时间可以恢复",
-                                                         @"恢复数据大概需要多长时间",
-                                                         @"工程师帮我分析数据安全吗",nil];
-    self.subProblemArray = [[NSArray alloc] initWithObjects:@"------我可以恢复亲友的微信吗------",
-                                                            @"------聊天记录里面的图片和视频能恢复吗------,------聊天记录里面的图片和视频能恢复吗------------聊天记录里面的图片和视频能恢复吗------",
-                                                            @"------数据丢失多长时间可以恢复-------",
-                                                            @"------恢复数据大概需要多长时间-------",
-                                                            @"------工程师帮我分析数据安全吗-------",nil];
+        
     self.expandArray = [[NSMutableArray alloc] initWithObjects:@"0",@"0",@"0",@"0",@"0",nil];
     
     

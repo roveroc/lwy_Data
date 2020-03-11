@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"服务详情";
+    
     PriceModel *model_1 = [[PriceModel alloc] init];
     model_1.imgString = @"item1";
     model_1.titleString = @"夜间加急-专家通宵服务 ￥288";

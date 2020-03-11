@@ -96,22 +96,29 @@
         case 100:
         {
             DetailOneViewController *Com = [[DetailOneViewController alloc] init];
+            Com.functionNo = 1;
             [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 101:
         {
-            
+            DetailOneViewController *Com = [[DetailOneViewController alloc] init];
+            Com.functionNo = 2;
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 102:
         {
-            
+            DetailOneViewController *Com = [[DetailOneViewController alloc] init];
+            Com.functionNo = 3;
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 103:
         {
-            
+            DetailOneViewController *Com = [[DetailOneViewController alloc] init];
+            Com.functionNo = 4;
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
         case 104:
