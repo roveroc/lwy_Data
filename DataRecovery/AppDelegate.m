@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+JM.h"
 #import "MainViewController.h"
 #import "GroupViewController.h"
 #import "NewsViewController.h"
@@ -79,7 +80,7 @@
     vc.navigationItem.title = title;
     nav.tabBarItem.title = title;
     
-    [nav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:2.0 / 255.0 green:180.0 / 255.0 blue:168.0 / 255.0 alpha:1]} forState:UIControlStateSelected];
+    [nav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithHexString:@"1E90FF"]} forState:UIControlStateSelected];
   
     [nav.tabBarItem setImage:[[UIImage imageNamed:imageNamed] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     

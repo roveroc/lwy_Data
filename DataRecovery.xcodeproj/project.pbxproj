@@ -11,6 +11,7 @@
 		300E352C2418BA7A00358432 /* DetailModeTowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E352A2418BA7A00358432 /* DetailModeTowViewController.m */; };
 		300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300E352B2418BA7A00358432 /* DetailModeTowViewController.xib */; };
 		300E35312418CB9200358432 /* PriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E35302418CB9200358432 /* PriceModel.m */; };
+		300E35352418FFAB00358432 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E35342418FFAB00358432 /* NewsCell.m */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
 		30E649132417332300AF5338 /* tempimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E649122417332300AF5338 /* tempimage.png */; };
 		30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E64917241763C300AF5338 /* DetailOneViewController.m */; };
@@ -63,6 +64,8 @@
 		300E352B2418BA7A00358432 /* DetailModeTowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailModeTowViewController.xib; sourceTree = "<group>"; };
 		300E352F2418CB9200358432 /* PriceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceModel.h; sourceTree = "<group>"; };
 		300E35302418CB9200358432 /* PriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceModel.m; sourceTree = "<group>"; };
+		300E35332418FFAB00358432 /* NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		300E35342418FFAB00358432 /* NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30E6490E2417288900AF5338 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		30E6490F2417288900AF5338 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		30E649122417332300AF5338 /* tempimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempimage.png; sourceTree = "<group>"; };
@@ -151,6 +154,15 @@
 				300E35302418CB9200358432 /* PriceModel.m */,
 			);
 			path = PriceModel;
+			sourceTree = "<group>";
+		};
+		300E35322418FF7E00358432 /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				300E35332418FFAB00358432 /* NewsCell.h */,
+				300E35342418FFAB00358432 /* NewsCell.m */,
+			);
+			path = NewsCell;
 			sourceTree = "<group>";
 		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
@@ -338,6 +350,7 @@
 		30E9A51A2416290D00A8B6CE /* NewsController */ = {
 			isa = PBXGroup;
 			children = (
+				300E35322418FF7E00358432 /* NewsCell */,
 				30E9A5412416317400A8B6CE /* NewsViewController.h */,
 				30E9A5422416317400A8B6CE /* NewsViewController.m */,
 				30E9A5402416317400A8B6CE /* NewsViewController.xib */,
@@ -565,6 +578,7 @@
 				30E9A550241632AB00A8B6CE /* UIColor+JM.m in Sources */,
 				30E649102417288900AF5338 /* UIColor+Hex.m in Sources */,
 				30E9A509241626A800A8B6CE /* BaseTabBarController.m in Sources */,
+				300E35352418FFAB00358432 /* NewsCell.m in Sources */,
 				30E9A53E2416313700A8B6CE /* GroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

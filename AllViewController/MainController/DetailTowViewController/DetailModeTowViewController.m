@@ -29,8 +29,6 @@
     self.title = @"服务详情";
     
     
-    
-    
     self.sview = [[ScreenView alloc] init];
     
     CGFloat height = 0;

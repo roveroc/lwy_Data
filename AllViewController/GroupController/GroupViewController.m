@@ -7,8 +7,11 @@
 //
 
 #import "GroupViewController.h"
+#import "BMUtilMacro.h"
 
 @interface GroupViewController ()
+
+@property (nonatomic, retain) UIWebView *webView;
 
 @end
 
@@ -17,6 +20,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    CGFloat height =0;
+    if (IS_IPHONE_X) {
+        height = AdaptedHeight(72);
+    }else
+    {
+        height = AdaptedHeight(68);
+    }
+    
+    
+    NSURL *url = [NSURL URLWithString:@"https://www.xiyoucts.com/about"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, height, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT-height*2+5)];
+    // 设置内边距
+//    self.webView.scrollView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+    //内容是否自适应
+    self.webView.scalesPageToFit = YES;
+    [self.webView loadRequest:request];
+    
+    [self.view addSubview:self.webView];
+    
+    self.webView.backgroundColor = [UIColor cyanColor];
+    
 }
 
 /*
