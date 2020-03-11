@@ -207,4 +207,69 @@
 }
 
 
+- (UIView *)getRecommandViewWithTitle:(NSString *)title name:(NSString *)name starImg:(NSString *)imgName content:(NSString *)content
+{
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH-45, 200)];
+    testLabel.font = [UIFont systemFontOfSize:16];
+    testLabel.numberOfLines = 0;
+    testLabel.text = content;
+    CGSize size = [testLabel sizeThatFits:CGSizeMake(DEF_SCREEN_WIDTH-45, 200)];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH-30, 50+size.height)];
+    view.backgroundColor = [UIColor colorWithHexString:@"EEE9E9"];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 5.0;
+    
+    UILabel *titleLab = [[UILabel alloc] init];
+    [view addSubview:titleLab];
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_top).offset(5);
+        make.left.equalTo(view.mas_left).offset(10);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH/2);
+        make.height.mas_equalTo(25);
+    }];
+    titleLab.textAlignment = NSTextAlignmentLeft;
+    titleLab.font = [UIFont systemFontOfSize:16];
+    titleLab.text = title;
+    
+    UILabel *nameLab = [[UILabel alloc] init];
+    [view addSubview:nameLab];
+    [nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_top).offset(8);
+        make.right.equalTo(view.mas_right).offset(-20);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH/3);
+        make.height.mas_equalTo(25);
+    }];
+    nameLab.textAlignment = NSTextAlignmentRight;
+    nameLab.font = [UIFont systemFontOfSize:12];
+    nameLab.textColor = [UIColor lightGrayColor];
+    nameLab.text = name;
+    
+    UIImageView *imgview = [[UIImageView alloc] init];
+    [view addSubview:imgview];
+    [imgview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(titleLab.mas_bottom).offset(5);
+        make.left.equalTo(titleLab.mas_left);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(8);
+    }];
+    imgview.image = [UIImage imageNamed:@"star"];
+    
+    UILabel *contentLab = [[UILabel alloc] init];
+    [view addSubview:contentLab];
+    [contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(imgview.mas_top).offset(10);
+        make.left.equalTo(imgview.mas_left);
+        make.right.equalTo(view.mas_right).offset(-10);
+        make.height.mas_equalTo(size.height);
+    }];
+    contentLab.textColor = [UIColor darkGrayColor];
+    contentLab.font = [UIFont systemFontOfSize:15];
+    contentLab.numberOfLines = 0;
+    contentLab.text = content;
+    
+    return view;
+}
+
+
 @end

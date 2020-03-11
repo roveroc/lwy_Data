@@ -34,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
                                 content:(NSString *)content
                                    time:(int)time;
 
+//评价View Cell
+- (UIView *)getRecommandViewWithTitle:(NSString *)title name:(NSString *)name starImg:(NSString *)imgName content:(NSString *)content;
+
 
 @end
 
