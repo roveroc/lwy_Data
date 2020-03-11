@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"我的订单";
+    self.navigationItem.title = @"我的订单";
     
     self.unLoginImgview = [[UIImageView alloc] init];
     [self.view addSubview:self.unLoginImgview];
