@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "UIColor+JM.h"
 #import "DetailOneViewController.h"
+#import "DetailModeTowViewController.h"
 
 #define BigImageHeight  300
 
@@ -130,7 +131,8 @@
             break;
         case 107:
         {
-            
+            DetailModeTowViewController *Com = [[DetailModeTowViewController alloc] init];
+            [self.navigationController pushViewController:Com animated:YES];
         }
             break;
             

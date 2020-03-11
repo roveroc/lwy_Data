@@ -37,6 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 //评价View Cell
 - (UIView *)getRecommandViewWithTitle:(NSString *)title name:(NSString *)name starImg:(NSString *)imgName content:(NSString *)content;
 
+//服务价钱说明View Cell
+- (UIView *)getPriceMsgViewWithImage:(NSString *)imageName title:(NSString *)title titleColor:(NSString *)colorString msg:(NSString *)msg;
+
+//详情服务展示信息方式二 中的顶部View
+- (UIView *)getTopViewWithImage:(NSString *)imageName title:(NSString *)title msg:(NSString *)msgString;
+
+
 
 @end
 

@@ -272,4 +272,149 @@
 }
 
 
+
+- (UIView *)getPriceMsgViewWithImage:(NSString *)imageName title:(NSString *)title titleColor:(NSString *)colorString msg:(NSString *)msg
+{
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH-80, 200)];
+    testLabel.font = [UIFont systemFontOfSize:16];
+    testLabel.numberOfLines = 0;
+    testLabel.text = msg;
+    CGSize size = [testLabel sizeThatFits:CGSizeMake(DEF_SCREEN_WIDTH-80, 200)];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH-30, 50+size.height)];
+    view.backgroundColor = [UIColor colorWithHexString:@"FFFFFF"];
+    view.layer.cornerRadius = 6.0;
+    view.layer.shadowColor = [UIColor colorWithHexString:colorString].CGColor;//阴影颜色
+    view.layer.shadowOpacity = 0.6;//阴影透明度，默认为0，如果不设置的话看不到阴影，切记，这是个大坑
+    view.layer.shadowOffset = CGSizeMake(0, 0);//设置偏移量
+    view.layer.cornerRadius = 3.0;
+    view.layer.shadowRadius = 3.0;
+    
+    UIImageView *imgview = [[UIImageView alloc] init];
+    [view addSubview:imgview];
+    [imgview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_top).offset(15);
+        make.left.equalTo(view.mas_left).offset(15);
+        make.width.mas_equalTo(25);
+        make.height.mas_equalTo(25);
+    }];
+    imgview.image = [UIImage imageNamed:imageName];
+    
+    UILabel *titleLab = [[UILabel alloc] init];
+    [view addSubview:titleLab];
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_top).offset(12);
+        make.left.equalTo(imgview.mas_right).offset(5);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH/4*3);
+        make.height.mas_equalTo(30);
+    }];
+    titleLab.textColor = [UIColor colorWithHexString:colorString];
+    titleLab.font = [UIFont systemFontOfSize:18];
+    titleLab.textAlignment = NSTextAlignmentLeft;
+    titleLab.text = title;
+    
+    UILabel *msgLab = [[UILabel alloc] init];
+    [view addSubview:msgLab];
+    [msgLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(imgview.mas_bottom).offset(-5);
+        make.left.equalTo(imgview.mas_left).offset(0);
+        make.width.mas_equalTo(view.frame.size.width-65);
+        make.height.mas_equalTo(size.height+40);
+    }];
+    msgLab.textColor = [UIColor colorWithHexString:@"696969"];
+    msgLab.font = [UIFont systemFontOfSize:15];
+    msgLab.textAlignment = NSTextAlignmentLeft;
+    msgLab.numberOfLines = 0;
+    msgLab.text = msg;
+    [self setLineSpace:5.0 withText:msg inLabel:msgLab];
+    
+    //msgLab.backgroundColor = [UIColor cyanColor];
+    
+    UIImageView *arrowImg = [[UIImageView alloc] init];
+    [view addSubview:arrowImg];
+    [arrowImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(view.mas_centerY);
+        make.right.equalTo(view.mas_right).offset(-15);
+        make.width.mas_equalTo(35);
+        make.height.mas_equalTo(35);
+    }];
+    arrowImg.image = [UIImage imageNamed:@"arrowimg_1"];
+    
+    return view;
+}
+
+
+-(void)setLineSpace:(CGFloat)lineSpace withText:(NSString *)text inLabel:(UILabel *)label{
+    if (!text || !label) {
+        return;
+    }
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = lineSpace;  //设置行间距
+    paragraphStyle.lineBreakMode = label.lineBreakMode;
+    paragraphStyle.alignment = label.textAlignment;
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [text length])];
+    label.attributedText = attributedString;
+}
+
+
+- (UIView *)getTopViewWithImage:(NSString *)imageName title:(NSString *)title msg:(NSString *)msgString
+{
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH-100, 200)];
+    testLabel.font = [UIFont systemFontOfSize:16];
+    testLabel.numberOfLines = 0;
+    testLabel.text = msgString;
+    CGSize size = [testLabel sizeThatFits:CGSizeMake(DEF_SCREEN_WIDTH-100, 200)];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, 60+size.height)];
+    view.backgroundColor = [UIColor colorWithHexString:@"FFFFFF"];
+    
+    UIImageView *imgview = [[UIImageView alloc] init];
+    [view addSubview:imgview];
+    [imgview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(view.mas_centerY);
+        make.left.equalTo(view.mas_left).offset(15);
+        make.width.mas_equalTo(65);
+        make.height.mas_equalTo(65);
+    }];
+    imgview.image = [UIImage imageNamed:imageName];
+    
+    
+    UILabel *lab = [[UILabel alloc] init];
+    [view addSubview:lab];
+    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(imgview.mas_top).offset(-5);
+        make.left.equalTo(imgview.mas_right).offset(15);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH/2);
+        make.height.mas_equalTo(30);
+    }];
+    lab.text = title;
+    lab.textAlignment = NSTextAlignmentLeft;
+    lab.textColor = [UIColor darkGrayColor];
+    lab.font = [UIFont systemFontOfSize:16];
+    
+    UILabel *sublab = [[UILabel alloc] init];
+    [view addSubview:sublab];
+    [sublab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lab.mas_bottom).offset(0);
+        make.left.equalTo(imgview.mas_right).offset(15);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH - imgview.frame.size.width - 110);
+        make.height.mas_equalTo(size.height);
+    }];
+    sublab.text = title;
+    sublab.numberOfLines = 0;
+    sublab.textAlignment = NSTextAlignmentLeft;
+    sublab.textColor = [UIColor lightGrayColor];
+    
+    [self setLineSpace:6.0 withText:msgString inLabel:sublab];
+    
+    //sublab.backgroundColor = [UIColor cyanColor];
+    
+    sublab.font = [UIFont systemFontOfSize:14];
+    
+    return view;
+}
+
+
 @end

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		300E352624188C9200358432 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E352524188C9200358432 /* CommentModel.m */; };
+		300E352C2418BA7A00358432 /* DetailModeTowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E352A2418BA7A00358432 /* DetailModeTowViewController.m */; };
+		300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300E352B2418BA7A00358432 /* DetailModeTowViewController.xib */; };
+		300E35312418CB9200358432 /* PriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E35302418CB9200358432 /* PriceModel.m */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
 		30E649132417332300AF5338 /* tempimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E649122417332300AF5338 /* tempimage.png */; };
 		30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E64917241763C300AF5338 /* DetailOneViewController.m */; };
@@ -55,6 +58,11 @@
 		25318AD47FB92C06BA4AEE52 /* Pods-DataRecovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataRecovery.debug.xcconfig"; path = "Target Support Files/Pods-DataRecovery/Pods-DataRecovery.debug.xcconfig"; sourceTree = "<group>"; };
 		300E352424188C9200358432 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		300E352524188C9200358432 /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		300E35292418BA7A00358432 /* DetailModeTowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModeTowViewController.h; sourceTree = "<group>"; };
+		300E352A2418BA7A00358432 /* DetailModeTowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModeTowViewController.m; sourceTree = "<group>"; };
+		300E352B2418BA7A00358432 /* DetailModeTowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailModeTowViewController.xib; sourceTree = "<group>"; };
+		300E352F2418CB9200358432 /* PriceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceModel.h; sourceTree = "<group>"; };
+		300E35302418CB9200358432 /* PriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceModel.m; sourceTree = "<group>"; };
 		30E6490E2417288900AF5338 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		30E6490F2417288900AF5338 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		30E649122417332300AF5338 /* tempimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempimage.png; sourceTree = "<group>"; };
@@ -136,6 +144,15 @@
 			path = CommentModel;
 			sourceTree = "<group>";
 		};
+		300E352E2418CB7200358432 /* PriceModel */ = {
+			isa = PBXGroup;
+			children = (
+				300E352F2418CB9200358432 /* PriceModel.h */,
+				300E35302418CB9200358432 /* PriceModel.m */,
+			);
+			path = PriceModel;
+			sourceTree = "<group>";
+		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,11 +172,15 @@
 			path = DetailOneViewController;
 			sourceTree = "<group>";
 		};
-		30E649152417637600AF5338 /* DetailTowOneViewController */ = {
+		30E649152417637600AF5338 /* DetailTowViewController */ = {
 			isa = PBXGroup;
 			children = (
+				300E352E2418CB7200358432 /* PriceModel */,
+				300E35292418BA7A00358432 /* DetailModeTowViewController.h */,
+				300E352A2418BA7A00358432 /* DetailModeTowViewController.m */,
+				300E352B2418BA7A00358432 /* DetailModeTowViewController.xib */,
 			);
-			path = DetailTowOneViewController;
+			path = DetailTowViewController;
 			sourceTree = "<group>";
 		};
 		30E6491B2417651C00AF5338 /* CellView */ = {
@@ -295,7 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				30E6491B2417651C00AF5338 /* CellView */,
-				30E649152417637600AF5338 /* DetailTowOneViewController */,
+				30E649152417637600AF5338 /* DetailTowViewController */,
 				30E649142417630000AF5338 /* DetailOneViewController */,
 				30E9A51D2416297900A8B6CE /* MainViewController.h */,
 				30E9A51E2416297900A8B6CE /* MainViewController.m */,
@@ -460,6 +481,7 @@
 				30E9A53F2416313700A8B6CE /* GroupViewController.xib in Resources */,
 				30E9A5112416288F00A8B6CE /* BaseNavigationController.xib in Resources */,
 				30E9A5492416317F00A8B6CE /* OrderViewController.xib in Resources */,
+				300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */,
 				30E9A516241628B700A8B6CE /* BaseViewController.xib in Resources */,
 				30E649132417332300AF5338 /* tempimage.png in Resources */,
 				30E9A4E32416236800A8B6CE /* Assets.xcassets in Resources */,
@@ -532,7 +554,9 @@
 				30E9A515241628B700A8B6CE /* BaseViewController.m in Sources */,
 				30E9A5102416288F00A8B6CE /* BaseNavigationController.m in Sources */,
 				30E9A4DB2416235600A8B6CE /* ViewController.m in Sources */,
+				300E352C2418BA7A00358432 /* DetailModeTowViewController.m in Sources */,
 				300E352624188C9200358432 /* CommentModel.m in Sources */,
+				300E35312418CB9200358432 /* PriceModel.m in Sources */,
 				30E9A5202416297900A8B6CE /* MainViewController.m in Sources */,
 				30E9A5442416317400A8B6CE /* NewsViewController.m in Sources */,
 				30E9A4D52416235600A8B6CE /* AppDelegate.m in Sources */,
