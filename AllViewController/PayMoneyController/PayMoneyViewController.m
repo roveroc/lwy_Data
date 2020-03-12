@@ -10,10 +10,14 @@
 #import <Masonry.h>
 #import "BMUtilMacro.h"
 #import "UIColor+JM.h"
+#import "MJPayApi.h"
+#import "BMHotelRoomModel.h"
 
 @interface PayMoneyViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) WXPayModel * model;
 
 @end
 
@@ -50,7 +54,48 @@
 #pragma mark ------------ 微信支付
 - (void)wechatPayFunction:(id)sender
 {
+    [self wxAppPayInfo];
+}
+
+-(void)wxAppPayInfo
+{
+    NSString *path = [@"https://www.xiyoucts.com" stringByAppendingString:@"/lv-basic/customer/login/userLoginPass"];
     
+       NSDictionary * dic = @{@"header":@{@"deviceId":@"2"},@"reqBody":@{@"phone":DEF_SafeStr(@"13502810641"),@"password":DEF_SafeStr(@"123456")}};
+       
+//       [[BM_NetAPIClicnet sharedJsonClient]requestJsonDataWithPath:path withParams:dic withTarget:nil withMethodType:Post withLoading:YES andBlock:^(id data, NSError *error)
+//        {
+//            if(data){
+//                //block(data,nil);
+//            }else
+//            {
+//                //block(nil,error);
+//            }
+//        }];
+    
+
+//    NSString *path =[@"https://www.xiyoucts.com" stringByAppendingString:@"/lv-orders/order/createOrder"];
+//
+//
+//    NSDictionary * params = @{@"header":@{@"deviceId":@"2"},@"reqBody":@{@"routeId":DEF_SafeStr(@"1"),
+//                                                                         @"departureDate":DEF_SafeStr(@"2020"),
+//                                                                         @"travellerId":DEF_SafeStr(@"2"),
+//                                                                         @"cdkey":DEF_SafeStr(@"1"),
+//                                                                         @"depositType":DEF_SafeStr(@"1"),
+//                                                                         @"linkmanName":DEF_SafeStr(@"1"),
+//                                                                         @"linkmanPhone":@"1",
+//                                                                         @"autNumber":DEF_SafeStr(@"1"),
+//                                                                         @"kidNumber":DEF_SafeStr(@"1")}};
+//
+//    [[BM_NetAPIClicnet sharedJsonClient]requestJsonDataWithPath:path withParams:params withTarget:nil withMethodType:Post withLoading:YES andBlock:^(id data, NSError *error)
+//     {
+//         if(data){
+//             //block(data,nil);
+//         }else
+//         {
+//             //block(nil,error);
+//         }
+//     }];
 }
 
 
