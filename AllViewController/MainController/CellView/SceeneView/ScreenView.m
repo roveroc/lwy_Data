@@ -409,12 +409,14 @@
     
     [self setLineSpace:6.0 withText:msgString inLabel:sublab];
     
-    //sublab.backgroundColor = [UIColor cyanColor];
-    
     sublab.font = [UIFont systemFontOfSize:14];
     
     return view;
 }
+
+
+
+
 
 
 @end

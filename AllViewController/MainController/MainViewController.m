@@ -12,6 +12,7 @@
 #import "UIColor+JM.h"
 #import "DetailOneViewController.h"
 #import "DetailModeTowViewController.h"
+#import <IQKeyboardManager.h>
 
 #define BigImageHeight  300
 
@@ -28,6 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //键盘管理
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = NO;
+    manager.enableAutoToolbar = YES;
+    
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -25, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT)];
     self.tableView.delegate = self;

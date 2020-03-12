@@ -12,8 +12,11 @@
 #import "UIColor+JM.h"
 #import "ScreenView.h"
 #import "CommentModel.h"
+#import "DetailModeTowViewController.h"
+#import "MakeOrderView.h"
+#import "PayMoneyViewController.h"
 
-@interface DetailOneViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface DetailOneViewController ()<UITableViewDelegate,UITableViewDataSource,MakeOrderViewDelegate>
 
 @property (nonatomic, strong) UITableView       *tableView;
 @property (nonatomic, strong) ScreenView        *sview;
@@ -31,6 +34,8 @@
 @property (nonatomic, strong) NSMutableArray    *expandArray;
 
 @property (nonatomic, strong) NSMutableArray    *commentArray;
+
+@property (nonatomic, strong) MakeOrderView     *orderView;
 
 @end
 
@@ -114,6 +119,96 @@
 }
 
 
+- (UIView *)getBottomOrderView
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, 70)];
+    view.backgroundColor = [UIColor colorWithHexString:@"FFFFFF"];
+    
+    UILabel *lab = [[UILabel alloc] init];
+    [view addSubview:lab];
+    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_top).offset(10);
+        make.left.equalTo(view.mas_left).offset(10);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH/3);
+        make.height.mas_equalTo(30);
+    }];
+    lab.text = @"可开电子发票";
+    lab.numberOfLines = 0;
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.textColor = [UIColor lightGrayColor];
+    
+    UIButton *button = [[UIButton alloc] init];
+    [view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_top).offset(0);
+        make.left.equalTo(lab.mas_right).offset(0);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH/3*2);
+        make.height.mas_equalTo(50);
+    }];
+    button.backgroundColor = [UIColor colorWithHexString:@"1E90FF"];
+    [button setTitle:@"立即下单" forState:UIControlStateNormal];
+    
+    [button addTarget:self action:@selector(makeOrderFuntion:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return view;
+}
+
+- (void)dismissBackView
+{
+    UIView *v = [self.view viewWithTag:713];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.orderView.alpha = 0;
+        v.alpha = 0;
+    }];
+    
+    [UIView animateWithDuration:0.6 animations:^{
+        [v removeFromSuperview];
+        [self.orderView removeFromSuperview];
+    }];
+}
+
+
+- (void)makeOrderFuntion:(UIButton *)sender
+{
+    UIView *backview = [[UIView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:backview];
+    backview.tag = 713;
+    backview.alpha = 0;
+    backview.backgroundColor = [UIColor lightGrayColor];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissBackView)];
+    [backview addGestureRecognizer:tapGes];
+    
+    self.orderView = [[MakeOrderView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT/4*3)];
+    self.orderView.delegate = self;
+    [self.view addSubview:self.orderView];
+    
+    self.orderView.layer.cornerRadius = 10.0;
+    [self.orderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.width.mas_equalTo(self.orderView.frame.size.width);
+        make.height.mas_equalTo(self.orderView.frame.size.height);
+    }];
+    self.orderView.alpha = 0;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.orderView.alpha = 1;
+        backview.alpha = 0.8;
+    }];
+}
+
+
+#pragma make -- Dlegate Order
+- (void)orderRowSelected:(int)row
+{
+    [self dismissBackView];
+    PayMoneyViewController *payCom = [[PayMoneyViewController alloc] init];
+    [self.navigationController pushViewController:payCom animated:YES];    
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -121,6 +216,15 @@
     
     self.sview = [[ScreenView alloc] init];
     [self initInterfaceData];
+    
+    UIView *bottomView = [self getBottomOrderView];
+    [self.view addSubview:bottomView];
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.height.mas_equalTo(70);
+    }];
             
     
     self.sview.itemArray = self.titleArray;
@@ -133,8 +237,7 @@
     
         
     self.expandArray = [[NSMutableArray alloc] initWithObjects:@"0",@"0",@"0",@"0",@"0",nil];
-    
-    
+        
     self.commentArray = [[NSMutableArray alloc] init];
     for(int i=0;i<5;i++)
     {
@@ -159,7 +262,7 @@
         height = AdaptedHeight(68);
     }
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT-height)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, height, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT-height-70)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];

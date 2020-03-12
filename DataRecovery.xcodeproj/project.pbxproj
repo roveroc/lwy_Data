@@ -12,6 +12,9 @@
 		300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300E352B2418BA7A00358432 /* DetailModeTowViewController.xib */; };
 		300E35312418CB9200358432 /* PriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E35302418CB9200358432 /* PriceModel.m */; };
 		300E35352418FFAB00358432 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E35342418FFAB00358432 /* NewsCell.m */; };
+		300E35392419D7A000358432 /* MakeOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E35382419D7A000358432 /* MakeOrderView.m */; };
+		300E353E2419E1B500358432 /* PayMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300E353C2419E1B500358432 /* PayMoneyViewController.m */; };
+		300E353F2419E1B500358432 /* PayMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300E353D2419E1B500358432 /* PayMoneyViewController.xib */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
 		30E649132417332300AF5338 /* tempimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E649122417332300AF5338 /* tempimage.png */; };
 		30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E64917241763C300AF5338 /* DetailOneViewController.m */; };
@@ -66,6 +69,11 @@
 		300E35302418CB9200358432 /* PriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceModel.m; sourceTree = "<group>"; };
 		300E35332418FFAB00358432 /* NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		300E35342418FFAB00358432 /* NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		300E35372419D7A000358432 /* MakeOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeOrderView.h; sourceTree = "<group>"; };
+		300E35382419D7A000358432 /* MakeOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeOrderView.m; sourceTree = "<group>"; };
+		300E353B2419E1B500358432 /* PayMoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayMoneyViewController.h; sourceTree = "<group>"; };
+		300E353C2419E1B500358432 /* PayMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayMoneyViewController.m; sourceTree = "<group>"; };
+		300E353D2419E1B500358432 /* PayMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayMoneyViewController.xib; sourceTree = "<group>"; };
 		30E6490E2417288900AF5338 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		30E6490F2417288900AF5338 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		30E649122417332300AF5338 /* tempimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempimage.png; sourceTree = "<group>"; };
@@ -165,6 +173,25 @@
 			path = NewsCell;
 			sourceTree = "<group>";
 		};
+		300E35362419D77300358432 /* MakeOrderView */ = {
+			isa = PBXGroup;
+			children = (
+				300E35372419D7A000358432 /* MakeOrderView.h */,
+				300E35382419D7A000358432 /* MakeOrderView.m */,
+			);
+			path = MakeOrderView;
+			sourceTree = "<group>";
+		};
+		300E353A2419E17F00358432 /* PayMoneyController */ = {
+			isa = PBXGroup;
+			children = (
+				300E353B2419E1B500358432 /* PayMoneyViewController.h */,
+				300E353C2419E1B500358432 /* PayMoneyViewController.m */,
+				300E353D2419E1B500358432 /* PayMoneyViewController.xib */,
+			);
+			path = PayMoneyController;
+			sourceTree = "<group>";
+		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +203,7 @@
 		30E649142417630000AF5338 /* DetailOneViewController */ = {
 			isa = PBXGroup;
 			children = (
+				300E35362419D77300358432 /* MakeOrderView */,
 				300E352324188C3A00358432 /* CommentModel */,
 				30E64916241763C300AF5338 /* DetailOneViewController.h */,
 				30E64917241763C300AF5338 /* DetailOneViewController.m */,
@@ -315,6 +343,7 @@
 		30E9A517241628D600A8B6CE /* AllViewController */ = {
 			isa = PBXGroup;
 			children = (
+				300E353A2419E17F00358432 /* PayMoneyController */,
 				30E9A51C2416295000A8B6CE /* LoginController */,
 				30E9A51B2416292400A8B6CE /* OrderController */,
 				30E9A51A2416290D00A8B6CE /* NewsController */,
@@ -501,6 +530,7 @@
 				30E9A5432416317400A8B6CE /* NewsViewController.xib in Resources */,
 				30E9A5212416297900A8B6CE /* MainViewController.xib in Resources */,
 				30E9A4DE2416235600A8B6CE /* Main.storyboard in Resources */,
+				300E353F2419E1B500358432 /* PayMoneyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,10 +597,12 @@
 				30E9A515241628B700A8B6CE /* BaseViewController.m in Sources */,
 				30E9A5102416288F00A8B6CE /* BaseNavigationController.m in Sources */,
 				30E9A4DB2416235600A8B6CE /* ViewController.m in Sources */,
+				300E35392419D7A000358432 /* MakeOrderView.m in Sources */,
 				300E352C2418BA7A00358432 /* DetailModeTowViewController.m in Sources */,
 				300E352624188C9200358432 /* CommentModel.m in Sources */,
 				300E35312418CB9200358432 /* PriceModel.m in Sources */,
 				30E9A5202416297900A8B6CE /* MainViewController.m in Sources */,
+				300E353E2419E1B500358432 /* PayMoneyViewController.m in Sources */,
 				30E9A5442416317400A8B6CE /* NewsViewController.m in Sources */,
 				30E9A4D52416235600A8B6CE /* AppDelegate.m in Sources */,
 				30E9A5482416317F00A8B6CE /* OrderViewController.m in Sources */,

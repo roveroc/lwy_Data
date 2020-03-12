@@ -23,6 +23,7 @@
 
 @implementation DetailModeTowViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,6 +39,7 @@
     {
         height = AdaptedHeight(68);
     }
+
 
     UIView *topView;
     switch (self.functionNo) {

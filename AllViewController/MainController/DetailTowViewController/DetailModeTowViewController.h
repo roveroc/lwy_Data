@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) int functionNo;       //是哪个功能界面
 
+
+
+- (void)Order_getTablview;
+
 @end
 
 NS_ASSUME_NONNULL_END
