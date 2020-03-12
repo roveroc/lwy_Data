@@ -111,6 +111,16 @@
             lab3.textAlignment = NSTextAlignmentRight;
             lab3.font = [UIFont systemFontOfSize:15];
             lab3.text = @"￥888";
+            
+            UIView *gapview = [[UIView alloc] init];
+            [cell addSubview:gapview];
+            [gapview mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(cell.mas_left);
+                make.right.equalTo(cell.mas_right);
+                make.bottom.equalTo(cell.mas_bottom);
+                make.height.mas_equalTo(15);
+            }];
+            gapview.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
         }
         else if(indexPath.row == 1)
         {
@@ -289,6 +299,8 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.row == 0)
+        return 95;
     if(indexPath.row == 2)
         return 50;
     return 80;
