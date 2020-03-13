@@ -142,7 +142,7 @@
             lab2.textColor = [UIColor darkGrayColor];
             lab2.textAlignment = NSTextAlignmentLeft;
             lab2.font = [UIFont systemFontOfSize:15];
-            lab2.text = @"夜间加急 - 专家通宵服务";
+            lab2.text = self.contentMsg; //@"夜间加急 - 专家通宵服务";
             
             UILabel *lab3 = [[UILabel alloc] init];
             [cell addSubview:lab3];
@@ -155,7 +155,7 @@
             lab3.textColor = [UIColor redColor];
             lab3.textAlignment = NSTextAlignmentRight;
             lab3.font = [UIFont systemFontOfSize:15];
-            lab3.text = @"￥888";
+            lab3.text = self.priceValue; //@"￥888";
             
             UIView *gapview = [[UIView alloc] init];
             [cell addSubview:gapview];
@@ -289,7 +289,8 @@
                 make.right.equalTo(cell.mas_right).offset(-15);
                 make.height.mas_equalTo(50);
             }];
-            [wechatPayBtn setTitle:@"微信支付           ￥188" forState:UIControlStateNormal];
+            NSString *str = [NSString stringWithFormat:@"微信支付           %@",self.priceValue];
+            [wechatPayBtn setTitle:str forState:UIControlStateNormal];
             wechatPayBtn.backgroundColor = [UIColor colorWithHexString:@"00CD00"];
             wechatPayBtn.layer.cornerRadius = 20.;
             wechatPayBtn.titleLabel.font = [UIFont systemFontOfSize:18];
@@ -306,7 +307,8 @@
                 make.right.equalTo(cell.mas_right).offset(-15);
                 make.height.mas_equalTo(50);
             }];
-            [aliPayBtn setTitle:@"支付宝支付           ￥188" forState:UIControlStateNormal];
+            NSString *str = [NSString stringWithFormat:@"微信支付           %@",self.priceValue];
+            [aliPayBtn setTitle:str forState:UIControlStateNormal];
             aliPayBtn.backgroundColor = [UIColor colorWithHexString:@"6495ED"];
             aliPayBtn.layer.cornerRadius = 20.;
             aliPayBtn.titleLabel.font = [UIFont systemFontOfSize:18];

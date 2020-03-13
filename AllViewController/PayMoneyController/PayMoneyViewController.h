@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PayMoneyViewController : BaseViewController
 
+
+@property (nonatomic,retain) NSString *priceValue;
+@property (nonatomic,retain) NSString *contentMsg;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

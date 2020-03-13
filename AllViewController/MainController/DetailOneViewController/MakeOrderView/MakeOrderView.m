@@ -73,7 +73,7 @@
 - (void)cutomLabelAttribite:(UILabel *)lab msg:(NSString *)msg
 {
     //需要特殊显示的价格,因为可能会动态改变,所以单独写出来了
-    NSString *price = @"注意:";
+    NSString *price = @"注意: ";
     //拼接需要显示的完整字符串
     NSString *string = [NSString stringWithFormat:@"%@%@",price,msg];
     //获取需要改变的字符串在完整字符串的范围
@@ -83,7 +83,7 @@
     //设置文字颜色
     [attributStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:rang];
     //设置文字大小
-    [attributStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:rang];
+    [attributStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:rang];
     //设置文字背景色
     //[attributStr addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:rang];
     //赋值
@@ -185,7 +185,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate orderRowSelected:indexPath.row];
+    PriceModel *model = [self.msgArray objectAtIndex:indexPath.row];
+    NSString *pv = [[model.titleString componentsSeparatedByString:@" "] objectAtIndex:1];
+    NSString *ms = [[model.titleString componentsSeparatedByString:@" "] objectAtIndex:0];
+    [self.delegate orderRowSelected:(int)indexPath.row price:pv content:ms];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

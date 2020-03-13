@@ -38,7 +38,7 @@
     manager.enableAutoToolbar = YES;
     
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -25, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 0;
@@ -72,13 +72,13 @@
     UIImageView *topImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tempimage.png"]];
     topImageView.contentMode = UIViewContentModeScaleAspectFill;
     // 1.图片的Y值设置为“-图片高度”
-    topImageView.frame = CGRectMake(0, -150, DEF_SCREEN_WIDTH, BigImageHeight);
+    topImageView.frame = CGRectMake(0, -380, DEF_SCREEN_WIDTH, BigImageHeight);
     _topImageView = topImageView;
     // 2.把图片插入到TableView的底部
     [self.tableView insertSubview:topImageView atIndex:0];
     // 3.设置TableView的内边距为“图片高度的一半”, 也就是说默认图片会露出来一半
     self.tableView.contentInset = UIEdgeInsetsMake(BigImageHeight / 2+ 80, 0, 0, 0);
-    [self.view addSubview:_tableView];
+//    [self.view addSubview:_tableView];
 }
 
 
@@ -176,6 +176,46 @@
     cell.backgroundColor = [UIColor colorWithHexString:@"0xF5F5F5"];
     if(indexPath.row == 1)
     {
+        
+    }
+    if(indexPath.row == 0)
+    {
+        UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, AdaptedHeight(320))];
+        headView.backgroundColor = [UIColor whiteColor];
+        //headView.layer.masksToBounds = YES;
+        headView.layer.cornerRadius = 0;
+
+        
+        NSArray * imageArr = @[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6",@"item7",@"item8"];
+        NSArray * titleArr = @[@"恢复微信消息",@"加会微信好友",@"清楚微信记录",@"照片视频恢复",@"QQ恢复",@"电脑数据恢复",@"清除手机数据",@"综合恢复套餐"];
+        int size = 85;
+        CGFloat spacing = (DEF_SCREEN_WIDTH-(size*3))/4;
+        for (int i=0; i<imageArr.count; i++) {
+            
+            NSInteger index = i % 3;
+            NSInteger page = i / 3;
+            
+            UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(index * (AdaptedWidth(size) + spacing) + spacing, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(15), AdaptedWidth(size+10), AdaptedWidth(size+10))];
+            [button setImage:[UIImage imageNamed:imageArr[i]] forState:UIControlStateNormal];
+            button.tag = i+100;
+            [button addTarget:self action:@selector(itemBtnClick:) forControlEvents:UIControlEventTouchUpInside
+             ] ;
+            [headView addSubview:button];
+            
+            
+            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(75), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
+            label.textAlignment = NSTextAlignmentCenter;
+            label.text = titleArr[i];
+            label.font = [UIFont systemFontOfSize:15];
+            label.textColor = [UIColor colorWithHexString:@"#666666"];
+            [headView addSubview:label];
+            
+            label.center = CGPointMake(button.center.x, label.center.y);
+        }
+        [cell addSubview:headView];
+    }
+    if(indexPath.row == 2)
+    {
         UIView *baseview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         baseview.backgroundColor = [UIColor colorWithHexString:@"0xF5F5F5"];
         [cell addSubview:baseview];
@@ -260,48 +300,50 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return AdaptedHeight(320);
+    return 0;//AdaptedHeight(320);
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 
-    UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, AdaptedHeight(350))];
-    headView.backgroundColor = [UIColor whiteColor];
-    headView.layer.masksToBounds = YES;
-    headView.layer.cornerRadius = 16;
-
+//    UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, AdaptedHeight(350))];
+//    headView.backgroundColor = [UIColor whiteColor];
+//    headView.layer.masksToBounds = YES;
+//    headView.layer.cornerRadius = 16;
+//
+//
+//    NSArray * imageArr = @[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6",@"item7",@"item8"];
+//    NSArray * titleArr = @[@"恢复微信消息",@"加会微信好友",@"清楚微信记录",@"照片视频恢复",@"QQ恢复",@"电脑数据恢复",@"清除手机数据",@"综合恢复套餐"];
+//    int size = 85;
+//    CGFloat spacing = (DEF_SCREEN_WIDTH-(size*3))/4;
+//    for (int i=0; i<imageArr.count; i++) {
+//
+//        NSInteger index = i % 3;
+//        NSInteger page = i / 3;
+//
+//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(index * (AdaptedWidth(size) + spacing) + spacing, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(15), AdaptedWidth(size+10), AdaptedWidth(size+10))];
+//        [button setImage:[UIImage imageNamed:imageArr[i]] forState:UIControlStateNormal];
+//        button.tag = i+100;
+//        [button addTarget:self action:@selector(itemBtnClick:) forControlEvents:UIControlEventTouchUpInside
+//         ] ;
+//        [headView addSubview:button];
+//
+//
+//        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(75), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.text = titleArr[i];
+//        label.font = [UIFont systemFontOfSize:15];
+//        label.textColor = [UIColor colorWithHexString:@"#666666"];
+//        [headView addSubview:label];
+//
+//        label.center = CGPointMake(button.center.x, label.center.y);
+//    }
+//
+//
+//    return headView;
     
-    NSArray * imageArr = @[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6",@"item7",@"item8"];
-    NSArray * titleArr = @[@"恢复微信消息",@"加会微信好友",@"清楚微信记录",@"照片视频恢复",@"QQ恢复",@"电脑数据恢复",@"清除手机数据",@"综合恢复套餐"];
-    int size = 85;
-    CGFloat spacing = (DEF_SCREEN_WIDTH-(size*3))/4;
-    for (int i=0; i<imageArr.count; i++) {
-        
-        NSInteger index = i % 3;
-        NSInteger page = i / 3;
-        
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(index * (AdaptedWidth(size) + spacing) + spacing, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(15), AdaptedWidth(size+10), AdaptedWidth(size+10))];
-        [button setImage:[UIImage imageNamed:imageArr[i]] forState:UIControlStateNormal];
-        button.tag = i+100;
-        [button addTarget:self action:@selector(itemBtnClick:) forControlEvents:UIControlEventTouchUpInside
-         ] ;
-        [headView addSubview:button];
-        
-        
-        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(75), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.text = titleArr[i];
-        label.font = [UIFont systemFontOfSize:15];
-        label.textColor = [UIColor colorWithHexString:@"#666666"];
-        [headView addSubview:label];
-        
-        label.center = CGPointMake(button.center.x, label.center.y);
-    }
-    
-    
-    return headView;
+    return nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -312,13 +354,15 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
-        return 20;
+        return AdaptedHeight(320);
+    if(indexPath.row == 1)
+        return 10;
     return 80;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

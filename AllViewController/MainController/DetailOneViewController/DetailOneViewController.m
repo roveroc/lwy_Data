@@ -200,10 +200,12 @@
 
 
 #pragma make -- Dlegate Order
-- (void)orderRowSelected:(int)row
+- (void)orderRowSelected:(int)row price:(NSString *)pv content:(NSString *)msg
 {
     [self dismissBackView];
     PayMoneyViewController *payCom = [[PayMoneyViewController alloc] init];
+    payCom.priceValue = pv;
+    payCom.contentMsg = msg;
     [self.navigationController pushViewController:payCom animated:YES];    
 }
 

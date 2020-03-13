@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MakeOrderViewDelegate <NSObject>
 
-- (void)orderRowSelected:(int)row;
+- (void)orderRowSelected:(int)row price:(NSString *)pv content:(NSString *)msg;
 
 @end
 
