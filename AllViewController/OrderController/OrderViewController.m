@@ -10,6 +10,7 @@
 #import <Masonry.h>
 #import "BMUtilMacro.h"
 #import "UIColor+JM.h"
+#import "LoginViewController.h"
 
 @interface OrderViewController ()
 
@@ -64,9 +65,11 @@
 }
 
 
+#pragma mark --------------- 跳转到登录页面
 - (void)Login:(UIButton *)btn
 {
-    
+    LoginViewController *loginCom = [[LoginViewController alloc] init];
+    [self.navigationController presentViewController:loginCom animated:YES completion:nil];
 }
 
 
