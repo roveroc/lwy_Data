@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "shouye_nomal.png",
+      "filename" : "首页灰.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "shouye_nomal@2x.png",
+      "filename" : "首页灰@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "shouye_nomal@3x.png",
+      "filename" : "首页灰@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "UIColor+JM.h"
 #import "NewsCell.h"
+#import "BM_NetAPIClicnet.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -45,6 +46,59 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    NSString *path =[DEF_NETPATH_BASEURL stringByAppendingString:@"/lv-hotel/hotel/getHotelList"];
+//       NSDictionary * params = @{@"header":@{@"deviceId":@"2"},
+//                                 @"reqBody":@{@"page":DEF_SafeStr(@"1"),
+//                                              @"pageSize":DEF_SafeStr(@"10"),
+//                                              @"hotelTypeId":DEF_SafeStr(@""),
+//                                              @"scenicId":DEF_SafeStr(@""),
+//                                              @"hotelName":DEF_SafeStr(@""),
+//                                              @"labelId":DEF_SafeStr(@"")}};
+//
+//       [[BM_NetAPIClicnet sharedJsonClient]requestJsonDataWithPath:path withParams:params withTarget:nil withMethodType:Post withLoading:YES andBlock:^(id data, NSError *error)
+//        {
+//            if(data){
+//                //block(data,nil);
+//            }else
+//            {
+//                //block(nil,error);
+//            }
+//        }];
+    
+
+    
+    
+    
+//    NSString *path = @"http://192.168.110.134:8888/users/login";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+//    [manager.requestSerializer setValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
+    
+    NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
+    //往字典里面添加需要提交的参数
+    [parametersDic setObject:@"13502810641" forKey:@"phone"];
+    [parametersDic setObject:@"123456" forKey:@"password"];
+    
+    // 涉及到用户隐私, 依然要用POST
+    [manager POST:path parameters:parametersDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //json数据全局化
+//        self.dic = (NSDictionary *)responseObject;
+        
+        NSData *da = (NSData *)responseObject;
+        
+        NSString *str = [[NSString alloc] initWithData:da encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", str);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+     {
+        NSLog(@"%@", error);
+    }];
+
     
 }
 

@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "geren_nomal.png",
+      "filename" : "团队灰.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "geren_nomal@2x.png",
+      "filename" : "团队灰@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
