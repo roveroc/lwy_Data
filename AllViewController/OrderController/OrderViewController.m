@@ -11,6 +11,7 @@
 #import "BMUtilMacro.h"
 #import "UIColor+JM.h"
 #import "LoginViewController.h"
+#import "ChatViewController.h"
 
 @interface OrderViewController ()
 
@@ -62,11 +63,16 @@
     [self.loginBtn setTitle:@"  登录  " forState:UIControlStateNormal];
     [self.loginBtn addTarget:self action:@selector(Login:) forControlEvents:UIControlEventTouchUpInside];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"contactImg.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showContactController)];
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated
+
+#pragma mark ------------ 跳转到联系我们界面
+- (void)showContactController
 {
-    self.tabBarItem.title = @"XX";
+    ChatViewController *com = [[ChatViewController alloc] init];
+    [self.navigationController pushViewController:com animated:YES];
 }
 
 

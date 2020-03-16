@@ -289,12 +289,14 @@
                 make.right.equalTo(cell.mas_right).offset(-15);
                 make.height.mas_equalTo(50);
             }];
-            NSString *str = [NSString stringWithFormat:@"微信支付           %@",self.priceValue];
+            NSString *str = [NSString stringWithFormat:@"微信支付           %@     ",self.priceValue];
             [wechatPayBtn setTitle:str forState:UIControlStateNormal];
-            wechatPayBtn.backgroundColor = [UIColor colorWithHexString:@"00CD00"];
-            wechatPayBtn.layer.cornerRadius = 20.;
+//            wechatPayBtn.backgroundColor = [UIColor colorWithHexString:@"00CD00"];
+//            wechatPayBtn.layer.cornerRadius = 20.;
             wechatPayBtn.titleLabel.font = [UIFont systemFontOfSize:18];
             [wechatPayBtn addTarget:self action:@selector(wechatPayFunction:) forControlEvents:UIControlEventTouchUpInside];
+            [wechatPayBtn setBackgroundImage:[UIImage imageNamed:@"wechatPayImg.png"] forState:UIControlStateNormal];
+            wechatPayBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         }
         
         else if(indexPath.row == 6)
@@ -307,12 +309,14 @@
                 make.right.equalTo(cell.mas_right).offset(-15);
                 make.height.mas_equalTo(50);
             }];
-            NSString *str = [NSString stringWithFormat:@"微信支付           %@",self.priceValue];
+            NSString *str = [NSString stringWithFormat:@"支付宝支付           %@     ",self.priceValue];
             [aliPayBtn setTitle:str forState:UIControlStateNormal];
-            aliPayBtn.backgroundColor = [UIColor colorWithHexString:@"6495ED"];
-            aliPayBtn.layer.cornerRadius = 20.;
+            //aliPayBtn.backgroundColor = [UIColor colorWithHexString:@"6495ED"];
+            //aliPayBtn.layer.cornerRadius = 20.;
             aliPayBtn.titleLabel.font = [UIFont systemFontOfSize:18];
             [aliPayBtn addTarget:self action:@selector(aliPayFunction:) forControlEvents:UIControlEventTouchUpInside];
+            [aliPayBtn setBackgroundImage:[UIImage imageNamed:@"alipayImg.png"] forState:UIControlStateNormal];
+            aliPayBtn.titleLabel.textAlignment = NSTextAlignmentRight;
         }
         else if(indexPath.row == 7)
         {

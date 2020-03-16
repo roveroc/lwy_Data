@@ -293,10 +293,10 @@
     UIImageView *imgview = [[UIImageView alloc] init];
     [view addSubview:imgview];
     [imgview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(view.mas_top).offset(15);
-        make.left.equalTo(view.mas_left).offset(15);
-        make.width.mas_equalTo(25);
-        make.height.mas_equalTo(25);
+        make.top.equalTo(view.mas_top).offset(18);
+        make.left.equalTo(view.mas_left).offset(18);
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
     }];
     imgview.image = [UIImage imageNamed:imageName];
     

@@ -40,6 +40,8 @@
 		303F665A241F1DEA00FB60CE /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 303F6659241F1DEA00FB60CE /* banner_1.jpg */; };
 		303F665F241F5B3F00FB60CE /* ShowServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303F665D241F5B3F00FB60CE /* ShowServiceViewController.m */; };
 		303F6660241F5B3F00FB60CE /* ShowServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303F665E241F5B3F00FB60CE /* ShowServiceViewController.xib */; };
+		303F6665241F5F7900FB60CE /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303F6663241F5F7900FB60CE /* ChatViewController.m */; };
+		303F6666241F5F7900FB60CE /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303F6664241F5F7900FB60CE /* ChatViewController.xib */; };
 		30467EB6241B85910098A35B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30467EB4241B85910098A35B /* LoginViewController.m */; };
 		30467EB7241B85910098A35B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30467EB5241B85910098A35B /* LoginViewController.xib */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
@@ -134,6 +136,9 @@
 		303F665C241F5B3F00FB60CE /* ShowServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowServiceViewController.h; sourceTree = "<group>"; };
 		303F665D241F5B3F00FB60CE /* ShowServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowServiceViewController.m; sourceTree = "<group>"; };
 		303F665E241F5B3F00FB60CE /* ShowServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowServiceViewController.xib; sourceTree = "<group>"; };
+		303F6662241F5F7900FB60CE /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		303F6663241F5F7900FB60CE /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		303F6664241F5F7900FB60CE /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		30467EB3241B85910098A35B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		30467EB4241B85910098A35B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		30467EB5241B85910098A35B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -317,6 +322,16 @@
 			path = ShowServiceController;
 			sourceTree = "<group>";
 		};
+		303F6661241F5F5200FB60CE /* ChatController */ = {
+			isa = PBXGroup;
+			children = (
+				303F6662241F5F7900FB60CE /* ChatViewController.h */,
+				303F6663241F5F7900FB60CE /* ChatViewController.m */,
+				303F6664241F5F7900FB60CE /* ChatViewController.xib */,
+			);
+			path = ChatController;
+			sourceTree = "<group>";
+		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +487,7 @@
 		30E9A517241628D600A8B6CE /* AllViewController */ = {
 			isa = PBXGroup;
 			children = (
+				303F6661241F5F5200FB60CE /* ChatController */,
 				303F665B241F5B0600FB60CE /* ShowServiceController */,
 				300E353A2419E17F00358432 /* PayMoneyController */,
 				30E9A51C2416295000A8B6CE /* LoginController */,
@@ -678,6 +694,7 @@
 				30E649132417332300AF5338 /* tempimage.png in Resources */,
 				303F6658241F1D2300FB60CE /* bannerimg.png in Resources */,
 				30E9A4E32416236800A8B6CE /* Assets.xcassets in Resources */,
+				303F6666241F5F7900FB60CE /* ChatViewController.xib in Resources */,
 				30E9A5432416317400A8B6CE /* NewsViewController.xib in Resources */,
 				30E9A5212416297900A8B6CE /* MainViewController.xib in Resources */,
 				303F665A241F1DEA00FB60CE /* banner_1.jpg in Resources */,
@@ -757,6 +774,7 @@
 				300E352624188C9200358432 /* CommentModel.m in Sources */,
 				300E35312418CB9200358432 /* PriceModel.m in Sources */,
 				30E9A5202416297900A8B6CE /* MainViewController.m in Sources */,
+				303F6665241F5F7900FB60CE /* ChatViewController.m in Sources */,
 				300E353E2419E1B500358432 /* PayMoneyViewController.m in Sources */,
 				30E9A5442416317400A8B6CE /* NewsViewController.m in Sources */,
 				30E9A4D52416235600A8B6CE /* AppDelegate.m in Sources */,

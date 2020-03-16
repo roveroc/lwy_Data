@@ -13,9 +13,10 @@
 #import "DetailOneViewController.h"
 #import "DetailModeTowViewController.h"
 #import "ShowServiceViewController.h"
+#import "ChatViewController.h"
 #import <IQKeyboardManager.h>
 
-#define BigImageHeight  300
+#define BigImageHeight  320
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -77,13 +78,12 @@
     UIImageView *topImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"banner_1.jpg"]];
     topImageView.contentMode = UIViewContentModeScaleAspectFill;
     // 1.图片的Y值设置为“-图片高度”
-    topImageView.frame = CGRectMake(0, -380, DEF_SCREEN_WIDTH, BigImageHeight);
+    topImageView.frame = CGRectMake(0, -320, DEF_SCREEN_WIDTH, BigImageHeight);
     _topImageView = topImageView;
     // 2.把图片插入到TableView的底部
     [self.tableView insertSubview:topImageView atIndex:0];
     // 3.设置TableView的内边距为“图片高度的一半”, 也就是说默认图片会露出来一半
-    self.tableView.contentInset = UIEdgeInsetsMake(BigImageHeight / 2+ 80, 0, 0, 0);
-//    [self.view addSubview:_tableView];
+    self.tableView.contentInset = UIEdgeInsetsMake(BigImageHeight / 2+ 20, 0, 0, 0);
 }
 
 
@@ -91,13 +91,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     //计算出Y轴的偏移量, 默认的位置为“-图片高度”, 所以需要加上图片高度的一半
-    CGFloat offsetY = scrollView.contentOffset.y + BigImageHeight / 2;
-    if (offsetY > 0) {
-        return;
-    }
-    //计算缩放比例 = 偏移量 / 屏幕高度 * 阻尼系数 (阻尼系数越大, 越难拖动)
-    CGFloat scale = - offsetY / BigImageHeight * 1;
-    _topImageView.transform = CGAffineTransformMakeScale(1 + scale, 1 + scale);
+//    CGFloat offsetY = scrollView.contentOffset.y + BigImageHeight / 2;
+//    if (offsetY > 0) {
+//        return;
+//    }
+//    //计算缩放比例 = 偏移量 / 屏幕高度 * 阻尼系数 (阻尼系数越大, 越难拖动)
+//    CGFloat scale = - offsetY / BigImageHeight * 1;
+//    _topImageView.transform = CGAffineTransformMakeScale(1 + scale, 1 + scale);
 }
 
 
@@ -199,8 +199,11 @@
             
             NSInteger index = i % 3;
             NSInteger page = i / 3;
+            int h_gap = 15;
+            if(page == 0)
+                h_gap = 30;
             
-            UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(index * (AdaptedWidth(size) + spacing) + spacing, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(15), AdaptedWidth(size+10), AdaptedWidth(size+10))];
+            UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(index * (AdaptedWidth(size) + spacing) + spacing, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(h_gap), AdaptedWidth(size+10), AdaptedWidth(size+10))];
             [button setImage:[UIImage imageNamed:imageArr[i]] forState:UIControlStateNormal];
             button.tag = i+100;
             [button addTarget:self action:@selector(itemBtnClick:) forControlEvents:UIControlEventTouchUpInside
@@ -299,6 +302,7 @@
         contactBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
         [contactBtn setTitle:@"联系客服" forState:UIControlStateNormal];
         [contactBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [contactBtn addTarget:self action:@selector(contactBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     //设置点击是透明色
@@ -324,7 +328,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
-        return AdaptedHeight(320);
+        return AdaptedHeight(340);
     if(indexPath.row == 1)
         return 10;
     return 80;
@@ -340,12 +344,20 @@
     return 1;
 }
 
+#pragma mark ----------------------- 服务流程
 - (void)serviceBtnClicked:(id)sender
 {
     ShowServiceViewController *com = [[ShowServiceViewController alloc] init];
     [self.navigationController pushViewController:com animated:YES];
 }
 
+
+#pragma mark ----------------------- 联系客户
+- (void)contactBtnClicked:(id)sender
+{
+    ChatViewController *com = [[ChatViewController alloc] init];
+    [self.navigationController pushViewController:com animated:YES];
+}
 
 
 @end

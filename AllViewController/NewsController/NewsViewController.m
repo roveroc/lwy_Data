@@ -13,6 +13,7 @@
 #import "NewsCell.h"
 #import "BM_NetAPIClicnet.h"
 #import "DetailOneViewController.h"
+#import "ChatViewController.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -46,7 +47,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"contactImg.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showContactController)];
     
     NSString *path =[DEF_NETPATH_BASEURL stringByAppendingString:@"/lv-hotel/hotel/getHotelList"];
 //       NSDictionary * params = @{@"header":@{@"deviceId":@"2"},
@@ -101,6 +103,13 @@
     }];
 
     
+}
+
+#pragma mark ------------ 跳转到联系我们界面
+- (void)showContactController
+{
+    ChatViewController *com = [[ChatViewController alloc] init];
+    [self.navigationController pushViewController:com animated:YES];
 }
 
 

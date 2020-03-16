@@ -7,6 +7,7 @@
 //
 
 #import "GroupViewController.h"
+#import "ChatViewController.h"
 #import "BMUtilMacro.h"
 
 @interface GroupViewController ()
@@ -42,7 +43,20 @@
     
     [self.view addSubview:self.webView];
     
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"contactImg.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showContactController)];
+    
 }
+
+
+#pragma mark ------------ 跳转到联系我们界面
+- (void)showContactController
+{
+    ChatViewController *com = [[ChatViewController alloc] init];
+    [self.navigationController pushViewController:com animated:YES];
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

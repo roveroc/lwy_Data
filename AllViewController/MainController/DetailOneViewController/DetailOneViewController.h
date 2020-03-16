@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailOneViewController : UIViewController //BaseViewController
+@interface DetailOneViewController : BaseViewController
 
 @property (nonatomic, assign) int functionNo;       //是哪个功能界面
 
