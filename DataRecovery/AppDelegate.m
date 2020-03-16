@@ -62,7 +62,7 @@
     
     NSArray *navArray = [[NSArray alloc] initWithObjects:mainNav,groupNav,newsNav,orderNav, nil];
     
-    self.tabbar = [[BaseTabBarController alloc] init];
+    self.tabbar = [[UITabBarController alloc] init];
     [self.tabbar setViewControllers:navArray];
     
     self.window.rootViewController = self.tabbar;

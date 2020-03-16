@@ -12,6 +12,7 @@
 #import "UIColor+JM.h"
 #import "NewsCell.h"
 #import "BM_NetAPIClicnet.h"
+#import "DetailOneViewController.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -127,7 +128,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    DetailOneViewController *com = [[DetailOneViewController alloc] init];
+    com.functionNo = 1;
+    [self.navigationController pushViewController:com animated:YES];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
