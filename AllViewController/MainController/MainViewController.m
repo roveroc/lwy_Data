@@ -73,7 +73,7 @@
 #pragma mark ------------------------ 顶部放大视图
 - (void)topBigView
 {
-    UIImageView *topImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tempimage.png"]];
+    UIImageView *topImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"banner_1.jpg"]];
     topImageView.contentMode = UIViewContentModeScaleAspectFill;
     // 1.图片的Y值设置为“-图片高度”
     topImageView.frame = CGRectMake(0, -380, DEF_SCREEN_WIDTH, BigImageHeight);
@@ -207,7 +207,7 @@
             [headView addSubview:button];
             
             
-            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(75), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
+            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(82), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
             label.textAlignment = NSTextAlignmentCenter;
             label.text = titleArr[i];
             label.font = [UIFont systemFontOfSize:15];
@@ -248,7 +248,7 @@
             make.width.mas_equalTo(40);
             make.height.mas_equalTo(40);
         }];
-        serviceImg.image = [UIImage imageNamed:@"item2.png"];
+        serviceImg.image = [UIImage imageNamed:@"serviceImg.png"];
 
 
         UIButton *serviceBtn = [[UIButton alloc] init];
@@ -283,7 +283,7 @@
             make.width.mas_equalTo(40);
             make.height.mas_equalTo(40);
         }];
-        contactImg.image = [UIImage imageNamed:@"item2.png"];
+        contactImg.image = [UIImage imageNamed:@"contactService.png"];
 
         UIButton *contactBtn = [[UIButton alloc] init];
         [view2 addSubview:contactBtn];
@@ -298,6 +298,12 @@
         [contactBtn setTitle:@"联系客服" forState:UIControlStateNormal];
         [contactBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }
+    
+    //设置点击是透明色
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor clearColor];
+    bgColorView.layer.masksToBounds = YES;
+    cell.selectedBackgroundView = bgColorView;
     
     return cell;
 }

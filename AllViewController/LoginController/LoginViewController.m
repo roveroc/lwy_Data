@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import <Masonry.h>
 #import "BMUtilMacro.h"
+#import "UIColor+JM.h"
 
 @interface LoginViewController ()
 
@@ -18,6 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIButton *cancelBtn = [[UIButton alloc] init];
+    [self.view addSubview:cancelBtn];
+    [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(15);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
+//    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+//    cancelBtn.backgroundColor = [UIColor colorWithHexString:@"FFB90F"];
+    [cancelBtn setBackgroundImage:[UIImage imageNamed:@"closeimg.png"] forState:UIControlStateNormal];
     
     
     UIImageView *logoImg = [[UIImageView alloc] init];
@@ -46,7 +59,7 @@
     UIImageView *phoneImg = [[UIImageView alloc] init];
     [self.view addSubview:phoneImg];
     [phoneImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(logoLab.mas_bottom).offset(70);
+        make.top.equalTo(logoLab.mas_bottom).offset(50);
         make.left.equalTo(self.view.mas_left).offset(40);
         make.width.mas_equalTo(35);
         make.height.mas_equalTo(35);
@@ -59,9 +72,8 @@
         make.centerY.equalTo(phoneImg.mas_centerY);
         make.left.equalTo(phoneImg.mas_right).offset(15);
         make.width.mas_equalTo(DEF_SCREEN_WIDTH - 80);
-        make.height.mas_equalTo(60);
+        make.height.mas_equalTo(40);
     }];
-//    phoneFiled.backgroundColor = [UIColor orangeColor];
     phoneFiled.placeholder = @"请输入你的手机号";
     
     UIImageView *lineImg = [[UIImageView alloc] init];
@@ -69,10 +81,67 @@
     [lineImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneImg.mas_bottom).offset(10);
         make.left.equalTo(self.view.mas_left).offset(30);
-        make.width.mas_equalTo(DEF_SCREEN_WIDTH);
-        make.height.mas_equalTo(1);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH-40);
+        make.height.mas_equalTo(0.5);
     }];
-    lineImg.backgroundColor = [UIColor lightGrayColor];
+    lineImg.backgroundColor = [UIColor colorWithHexString:@"CDC9C9"];
+    
+    
+    UIImageView *codeImg = [[UIImageView alloc] init];
+    [self.view addSubview:codeImg];
+    [codeImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(lineImg.mas_bottom).offset(15);
+        make.left.equalTo(self.view.mas_left).offset(40);
+        make.width.mas_equalTo(35);
+        make.height.mas_equalTo(35);
+    }];
+    codeImg.image = [UIImage imageNamed:@"item1"];
+    
+    UITextField *codeFiled = [[UITextField alloc] init];
+    [self.view addSubview:codeFiled];
+    [codeFiled mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(codeImg.mas_centerY);
+        make.left.equalTo(codeImg.mas_right).offset(15);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH - 100);
+        make.height.mas_equalTo(40);
+    }];
+    codeFiled.placeholder = @"请输入验证码";
+    
+    UIButton *codebtn = [[UIButton alloc] init];
+    [self.view addSubview:codebtn];
+    [codebtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(codeImg.mas_centerY);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.width.mas_equalTo(80);
+        make.height.mas_equalTo(40);
+    }];
+    [codebtn setTitle:@"验证码" forState:UIControlStateNormal];
+    codebtn.backgroundColor = [UIColor colorWithHexString:@"32CD32"];
+    
+    UIImageView *codeLineImg = [[UIImageView alloc] init];
+    [self.view addSubview:codeLineImg];
+    [codeLineImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(codeImg.mas_bottom).offset(10);
+        make.left.equalTo(self.view.mas_left).offset(30);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH-40);
+        make.height.mas_equalTo(0.7);
+    }];
+    codeLineImg.backgroundColor = [UIColor colorWithHexString:@"CDC9C9"];
+    
+    
+    
+    UIButton *loginBtn = [[UIButton alloc] init];
+    [self.view addSubview:loginBtn];
+    [loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(codeLineImg.mas_bottom).offset(88);
+        make.left.equalTo(self.view.mas_left).offset(40);
+        make.width.mas_equalTo(DEF_SCREEN_WIDTH - 80);
+        make.height.mas_equalTo(50);
+    }];
+    loginBtn.layer.cornerRadius = 8.0;
+    [loginBtn setTitle:@"登  入" forState:UIControlStateNormal];
+    loginBtn.backgroundColor = [UIColor colorWithHexString:@"32CD32"];
+    
     
 }
 

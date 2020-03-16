@@ -36,6 +36,8 @@
 		300E357F241A16C900358432 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300E357E241A16C800358432 /* CoreMotion.framework */; };
 		300E3581241A16E200358432 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300E3580241A16E200358432 /* CoreGraphics.framework */; };
 		3029500B241B19C700CD30D5 /* BM_NetAPIClicnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30295009241B19C700CD30D5 /* BM_NetAPIClicnet.m */; };
+		303F6658241F1D2300FB60CE /* bannerimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 303F6657241F1D2200FB60CE /* bannerimg.png */; };
+		303F665A241F1DEA00FB60CE /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 303F6659241F1DEA00FB60CE /* banner_1.jpg */; };
 		30467EB6241B85910098A35B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30467EB4241B85910098A35B /* LoginViewController.m */; };
 		30467EB7241B85910098A35B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30467EB5241B85910098A35B /* LoginViewController.xib */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
@@ -125,6 +127,8 @@
 		300E3580241A16E200358432 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		30295009241B19C700CD30D5 /* BM_NetAPIClicnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BM_NetAPIClicnet.m; sourceTree = "<group>"; };
 		3029500A241B19C700CD30D5 /* BM_NetAPIClicnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BM_NetAPIClicnet.h; sourceTree = "<group>"; };
+		303F6657241F1D2200FB60CE /* bannerimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerimg.png; sourceTree = "<group>"; };
+		303F6659241F1DEA00FB60CE /* banner_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_1.jpg; sourceTree = "<group>"; };
 		30467EB3241B85910098A35B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		30467EB4241B85910098A35B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		30467EB5241B85910098A35B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
+				303F6659241F1DEA00FB60CE /* banner_1.jpg */,
+				303F6657241F1D2200FB60CE /* bannerimg.png */,
 				30E649122417332300AF5338 /* tempimage.png */,
 			);
 			path = ImageResouce;
@@ -653,9 +659,11 @@
 				300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */,
 				30E9A516241628B700A8B6CE /* BaseViewController.xib in Resources */,
 				30E649132417332300AF5338 /* tempimage.png in Resources */,
+				303F6658241F1D2300FB60CE /* bannerimg.png in Resources */,
 				30E9A4E32416236800A8B6CE /* Assets.xcassets in Resources */,
 				30E9A5432416317400A8B6CE /* NewsViewController.xib in Resources */,
 				30E9A5212416297900A8B6CE /* MainViewController.xib in Resources */,
+				303F665A241F1DEA00FB60CE /* banner_1.jpg in Resources */,
 				30E9A4DE2416235600A8B6CE /* Main.storyboard in Resources */,
 				300E353F2419E1B500358432 /* PayMoneyViewController.xib in Resources */,
 			);

@@ -35,7 +35,7 @@
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.centerY.equalTo(self.view.mas_centerY).offset(-50);
     }];
-    self.unLoginImgview.image = [UIImage imageNamed:@"item1"];
+    self.unLoginImgview.image = [UIImage imageNamed:@"unlogin.png"];
     
     self.unloginMsgLabel = [[UILabel alloc] init];
     [self.view addSubview:self.unloginMsgLabel];
