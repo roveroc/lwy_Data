@@ -63,6 +63,8 @@
     NSArray *navArray = [[NSArray alloc] initWithObjects:mainNav,groupNav,newsNav,orderNav, nil];
     
     self.tabbar = [[UITabBarController alloc] init];
+    [[UITabBar appearance] setTranslucent:NO];
+    self.tabbar.extendedLayoutIncludesOpaqueBars = YES;
     [self.tabbar setViewControllers:navArray];
     
     self.window.rootViewController = self.tabbar;

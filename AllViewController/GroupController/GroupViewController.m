@@ -42,8 +42,6 @@
     
     [self.view addSubview:self.webView];
     
-    self.webView.backgroundColor = [UIColor cyanColor];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
