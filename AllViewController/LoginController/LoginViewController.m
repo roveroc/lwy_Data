@@ -25,12 +25,13 @@
     [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(15);
         make.right.equalTo(self.view.mas_right).offset(-15);
-        make.width.mas_equalTo(50);
-        make.height.mas_equalTo(50);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(30);
     }];
 //    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
 //    cancelBtn.backgroundColor = [UIColor colorWithHexString:@"FFB90F"];
-    [cancelBtn setBackgroundImage:[UIImage imageNamed:@"closeimg.png"] forState:UIControlStateNormal];
+    [cancelBtn setBackgroundImage:[UIImage imageNamed:@"closeImg.png"] forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(cancelBtnCliked:) forControlEvents:UIControlEventTouchUpInside];
     
     
     UIImageView *logoImg = [[UIImageView alloc] init];
@@ -112,11 +113,14 @@
     [codebtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(codeImg.mas_centerY);
         make.right.equalTo(self.view.mas_right).offset(-15);
-        make.width.mas_equalTo(80);
-        make.height.mas_equalTo(40);
+        make.width.mas_equalTo(85);
+        make.height.mas_equalTo(35);
     }];
     [codebtn setTitle:@"验证码" forState:UIControlStateNormal];
+    codebtn.layer.cornerRadius = 8.0;
+    codebtn.titleLabel.font = [UIFont systemFontOfSize:15];
     codebtn.backgroundColor = [UIColor colorWithHexString:@"32CD32"];
+    [codebtn addTarget:self action:@selector(codeBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *codeLineImg = [[UIImageView alloc] init];
     [self.view addSubview:codeLineImg];
@@ -140,11 +144,31 @@
     }];
     loginBtn.layer.cornerRadius = 8.0;
     [loginBtn setTitle:@"登  入" forState:UIControlStateNormal];
+    loginBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     loginBtn.backgroundColor = [UIColor colorWithHexString:@"32CD32"];
-    
+    [loginBtn addTarget:self action:@selector(loginBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
+#pragma mark -------- 退出登入界面
+- (void)cancelBtnCliked:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark -------- 获取验证码
+- (void)codeBtnClicked:(id)sender
+{
+    
+}
+
+
+#pragma mark -------- 登入
+- (void)loginBtnClicked:(id)sender
+{
+    
+}
 
 
 @end

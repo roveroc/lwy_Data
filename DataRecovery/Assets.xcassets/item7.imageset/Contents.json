@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "综合恢复套餐.png",
+      "filename" : "清除手机数据.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "综合恢复套餐@2x.png",
+      "filename" : "清除手机数据@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "综合恢复套餐@3x.png",
+      "filename" : "清除手机数据@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "清除手机数据.png",
+      "filename" : "清除微信记录.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "清除手机数据@2x.png",
+      "filename" : "清除微信记录@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "清除手机数据@3x.png",
+      "filename" : "清除微信记录@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

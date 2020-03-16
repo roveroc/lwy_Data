@@ -270,10 +270,21 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
-    
-    
-    
-    
+}
+
+- (void)gapView:(UIView *)sview
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, 10)];
+    view.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
+    [sview addSubview:view];
+    view.frame = CGRectMake(0, 0,DEF_SCREEN_WIDTH, 5);
+    [sview addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(sview.mas_left);
+        make.right.equalTo(sview.mas_right);
+        make.bottom.equalTo(sview.mas_bottom);
+        make.height.mas_equalTo(10);
+    }];
 }
 
 
@@ -290,6 +301,7 @@
             if(indexPath.row == 0)
             {
                 [cell addSubview:self.priceView];
+                [self gapView:cell];
             }
         }
         if(indexPath.section == 1)
@@ -297,6 +309,7 @@
             if(indexPath.row == 0)
             {
                 [cell addSubview:self.screenView];
+                [self gapView:cell];
             }
         }
         if(indexPath.section == 2)
@@ -312,6 +325,8 @@
             if(indexPath.row == 2)
             {
                 [cell addSubview:self.serviceMoveView_2];
+                
+                [self gapView:cell];
             }
         }
     }
@@ -330,8 +345,8 @@
             }
             if([[self.expandArray objectAtIndex:indexPath.row-1] intValue] == 0)
             {
-                UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 15, 15)];
-                img.image = [UIImage imageNamed:@"item1"];
+                UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(13, 14, 10, 10)];
+                img.image = [UIImage imageNamed:@"blueRadioImg.png"];
                 [cell addSubview:img];
                 
                 UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, DEF_SCREEN_WIDTH-50, 30)];
@@ -353,8 +368,8 @@
             }
             else if([[self.expandArray objectAtIndex:indexPath.row-1] intValue] == 1)
             {
-                UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 15, 15)];
-                img.image = [UIImage imageNamed:@"item1"];
+                UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(13, 14, 10, 10)];
+                img.image = [UIImage imageNamed:@"blueRadioImg.png"];
                 [cell addSubview:img];
                 
                 UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, DEF_SCREEN_WIDTH-50, 30)];
@@ -387,7 +402,7 @@
                     make.right.equalTo(cell.mas_right).offset(-10);
                     make.height.mas_equalTo(size.height+20);
                 }];
-                view.backgroundColor = [UIColor colorWithHexString:@"EEE9E9"];
+                view.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
                 view.layer.masksToBounds = YES;
                 view.layer.cornerRadius = 5.0;
                 
@@ -402,6 +417,11 @@
                 contentLab.text = [self.subProblemArray objectAtIndex:indexPath.row-1];
                 contentLab.numberOfLines = 0;
                 contentLab.font = [UIFont systemFontOfSize:14];
+            }
+            
+            if(indexPath.row+1 > self.expandArray.count)
+            {
+                [self gapView:cell];
             }
         }
     }
@@ -455,12 +475,12 @@
     if(indexPath.section == 0)
     {
         if(indexPath.row == 0)
-            return self.priceView.frame.size.height;
+            return self.priceView.frame.size.height+5;
     }
     if(indexPath.section == 1)
     {
         if(indexPath.row == 0)
-            return self.screenView.frame.size.height;
+            return self.screenView.frame.size.height+5;
     }
     if(indexPath.section == 2)
     {
@@ -469,7 +489,7 @@
         else if(indexPath.row == 1)
             return self.serviceMoveView_1.frame.size.height;
         else if(indexPath.row == 2)
-            return self.serviceMoveView_2.frame.size.height;
+            return self.serviceMoveView_2.frame.size.height+10;
     }
     else if(indexPath.section == 3)
     {
@@ -486,7 +506,10 @@
             testLabel.numberOfLines = 0;
             testLabel.text = [self.subProblemArray objectAtIndex:indexPath.row-1];
             CGSize size = [testLabel sizeThatFits:CGSizeMake(DEF_SCREEN_WIDTH-20, 200)];
+            if(indexPath.row == self.expandArray.count)
+                return size.height + 80;
             return size.height + 70;
+            
         }
     }
     else if(indexPath.section == 4)

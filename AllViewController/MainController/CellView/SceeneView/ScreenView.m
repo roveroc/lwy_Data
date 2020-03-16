@@ -216,7 +216,7 @@
     CGSize size = [testLabel sizeThatFits:CGSizeMake(DEF_SCREEN_WIDTH-45, 200)];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH-30, 50+size.height)];
-    view.backgroundColor = [UIColor colorWithHexString:@"EEE9E9"];
+    view.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
     view.layer.masksToBounds = YES;
     view.layer.cornerRadius = 5.0;
     
