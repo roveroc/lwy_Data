@@ -103,6 +103,12 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarItem.title = @"动态";
+}
+
+
 #pragma Uitableview  Delegate
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

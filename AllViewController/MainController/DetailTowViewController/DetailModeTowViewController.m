@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"服务详情";
+    //self.navigationItem.title = @"服务详情";
     
     
     self.sview = [[ScreenView alloc] init];

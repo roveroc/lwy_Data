@@ -26,6 +26,8 @@
 
 @implementation MainViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -57,6 +59,8 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    
+    
 }
 -(void)viewWillDisappear:(BOOL)animated
 {

@@ -64,6 +64,11 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarItem.title = @"XX";
+}
+
 
 #pragma mark --------------- 跳转到登录页面
 - (void)Login:(UIButton *)btn

@@ -46,6 +46,11 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarItem.title = @"团队";
+}
+
 /*
 #pragma mark - Navigation
 
