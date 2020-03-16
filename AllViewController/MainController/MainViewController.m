@@ -12,6 +12,7 @@
 #import "UIColor+JM.h"
 #import "DetailOneViewController.h"
 #import "DetailModeTowViewController.h"
+#import "ShowServiceViewController.h"
 #import <IQKeyboardManager.h>
 
 #define BigImageHeight  300
@@ -263,6 +264,7 @@
         serviceBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
         [serviceBtn setTitle:@"服务流程" forState:UIControlStateNormal];
         [serviceBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [serviceBtn addTarget:self action:@selector(serviceBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         
         UIView *view2 = [[UIView alloc] init];
@@ -314,48 +316,6 @@
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-
-//    UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEF_SCREEN_WIDTH, AdaptedHeight(350))];
-//    headView.backgroundColor = [UIColor whiteColor];
-//    headView.layer.masksToBounds = YES;
-//    headView.layer.cornerRadius = 16;
-//
-//
-//    NSArray * imageArr = @[@"item1",@"item2",@"item3",@"item4",@"item5",@"item6",@"item7",@"item8"];
-//    NSArray * titleArr = @[@"恢复微信消息",@"加会微信好友",@"清楚微信记录",@"照片视频恢复",@"QQ恢复",@"电脑数据恢复",@"清除手机数据",@"综合恢复套餐"];
-//    int size = 85;
-//    CGFloat spacing = (DEF_SCREEN_WIDTH-(size*3))/4;
-//    for (int i=0; i<imageArr.count; i++) {
-//
-//        NSInteger index = i % 3;
-//        NSInteger page = i / 3;
-//
-//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(index * (AdaptedWidth(size) + spacing) + spacing, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(15), AdaptedWidth(size+10), AdaptedWidth(size+10))];
-//        [button setImage:[UIImage imageNamed:imageArr[i]] forState:UIControlStateNormal];
-//        button.tag = i+100;
-//        [button addTarget:self action:@selector(itemBtnClick:) forControlEvents:UIControlEventTouchUpInside
-//         ] ;
-//        [headView addSubview:button];
-//
-//
-//        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(75), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.text = titleArr[i];
-//        label.font = [UIFont systemFontOfSize:15];
-//        label.textColor = [UIColor colorWithHexString:@"#666666"];
-//        [headView addSubview:label];
-//
-//        label.center = CGPointMake(button.center.x, label.center.y);
-//    }
-//
-//
-//    return headView;
-    
-    return nil;
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -380,7 +340,11 @@
     return 1;
 }
 
-
+- (void)serviceBtnClicked:(id)sender
+{
+    ShowServiceViewController *com = [[ShowServiceViewController alloc] init];
+    [self.navigationController pushViewController:com animated:YES];
+}
 
 
 

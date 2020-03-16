@@ -38,6 +38,8 @@
 		3029500B241B19C700CD30D5 /* BM_NetAPIClicnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30295009241B19C700CD30D5 /* BM_NetAPIClicnet.m */; };
 		303F6658241F1D2300FB60CE /* bannerimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 303F6657241F1D2200FB60CE /* bannerimg.png */; };
 		303F665A241F1DEA00FB60CE /* banner_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 303F6659241F1DEA00FB60CE /* banner_1.jpg */; };
+		303F665F241F5B3F00FB60CE /* ShowServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303F665D241F5B3F00FB60CE /* ShowServiceViewController.m */; };
+		303F6660241F5B3F00FB60CE /* ShowServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303F665E241F5B3F00FB60CE /* ShowServiceViewController.xib */; };
 		30467EB6241B85910098A35B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30467EB4241B85910098A35B /* LoginViewController.m */; };
 		30467EB7241B85910098A35B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30467EB5241B85910098A35B /* LoginViewController.xib */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
@@ -129,6 +131,9 @@
 		3029500A241B19C700CD30D5 /* BM_NetAPIClicnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BM_NetAPIClicnet.h; sourceTree = "<group>"; };
 		303F6657241F1D2200FB60CE /* bannerimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerimg.png; sourceTree = "<group>"; };
 		303F6659241F1DEA00FB60CE /* banner_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_1.jpg; sourceTree = "<group>"; };
+		303F665C241F5B3F00FB60CE /* ShowServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowServiceViewController.h; sourceTree = "<group>"; };
+		303F665D241F5B3F00FB60CE /* ShowServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowServiceViewController.m; sourceTree = "<group>"; };
+		303F665E241F5B3F00FB60CE /* ShowServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowServiceViewController.xib; sourceTree = "<group>"; };
 		30467EB3241B85910098A35B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		30467EB4241B85910098A35B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		30467EB5241B85910098A35B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -302,6 +307,16 @@
 			path = WeChatSDK1.8.4;
 			sourceTree = "<group>";
 		};
+		303F665B241F5B0600FB60CE /* ShowServiceController */ = {
+			isa = PBXGroup;
+			children = (
+				303F665C241F5B3F00FB60CE /* ShowServiceViewController.h */,
+				303F665D241F5B3F00FB60CE /* ShowServiceViewController.m */,
+				303F665E241F5B3F00FB60CE /* ShowServiceViewController.xib */,
+			);
+			path = ShowServiceController;
+			sourceTree = "<group>";
+		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +472,7 @@
 		30E9A517241628D600A8B6CE /* AllViewController */ = {
 			isa = PBXGroup;
 			children = (
+				303F665B241F5B0600FB60CE /* ShowServiceController */,
 				300E353A2419E17F00358432 /* PayMoneyController */,
 				30E9A51C2416295000A8B6CE /* LoginController */,
 				30E9A51B2416292400A8B6CE /* OrderController */,
@@ -658,6 +674,7 @@
 				30E9A5492416317F00A8B6CE /* OrderViewController.xib in Resources */,
 				300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */,
 				30E9A516241628B700A8B6CE /* BaseViewController.xib in Resources */,
+				303F6660241F5B3F00FB60CE /* ShowServiceViewController.xib in Resources */,
 				30E649132417332300AF5338 /* tempimage.png in Resources */,
 				303F6658241F1D2300FB60CE /* bannerimg.png in Resources */,
 				30E9A4E32416236800A8B6CE /* Assets.xcassets in Resources */,
@@ -728,6 +745,7 @@
 				30E9A54F241632AB00A8B6CE /* UIView+JM.m in Sources */,
 				30E9A4E92416236800A8B6CE /* main.m in Sources */,
 				300E354C241A0E5900358432 /* BMHotelRoomModel.m in Sources */,
+				303F665F241F5B3F00FB60CE /* ShowServiceViewController.m in Sources */,
 				30E6491F2417654E00AF5338 /* ScreenView.m in Sources */,
 				30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */,
 				30467EB6241B85910098A35B /* LoginViewController.m in Sources */,
