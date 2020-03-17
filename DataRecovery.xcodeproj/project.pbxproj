@@ -44,6 +44,7 @@
 		303F6666241F5F7900FB60CE /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303F6664241F5F7900FB60CE /* ChatViewController.xib */; };
 		30467EB6241B85910098A35B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30467EB4241B85910098A35B /* LoginViewController.m */; };
 		30467EB7241B85910098A35B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30467EB5241B85910098A35B /* LoginViewController.xib */; };
+		3073F8FB2420681A00F1F726 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3073F8F92420681A00F1F726 /* Tools.m */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
 		30E649132417332300AF5338 /* tempimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E649122417332300AF5338 /* tempimage.png */; };
 		30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E64917241763C300AF5338 /* DetailOneViewController.m */; };
@@ -142,6 +143,8 @@
 		30467EB3241B85910098A35B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		30467EB4241B85910098A35B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		30467EB5241B85910098A35B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3073F8F92420681A00F1F726 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		3073F8FA2420681A00F1F726 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		30E6490E2417288900AF5338 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		30E6490F2417288900AF5338 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		30E649122417332300AF5338 /* tempimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempimage.png; sourceTree = "<group>"; };
@@ -332,6 +335,15 @@
 			path = ChatController;
 			sourceTree = "<group>";
 		};
+		3073F8F82420680000F1F726 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3073F8FA2420681A00F1F726 /* Tools.h */,
+				3073F8F92420681A00F1F726 /* Tools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +397,7 @@
 		30E9A4C72416235600A8B6CE = {
 			isa = PBXGroup;
 			children = (
+				3073F8F82420680000F1F726 /* Tools */,
 				300E355B241A119800358432 /* PaySDK */,
 				300E3540241A0BE500358432 /* NetAPI */,
 				30E9A54A2416328600A8B6CE /* SomeCategory */,
@@ -780,6 +793,7 @@
 				30E9A4D52416235600A8B6CE /* AppDelegate.m in Sources */,
 				3029500B241B19C700CD30D5 /* BM_NetAPIClicnet.m in Sources */,
 				30E9A5482416317F00A8B6CE /* OrderViewController.m in Sources */,
+				3073F8FB2420681A00F1F726 /* Tools.m in Sources */,
 				30E9A4E12416235600A8B6CE /* DataRecovery.xcdatamodeld in Sources */,
 				300E3549241A0DDE00358432 /* MJPayApi.m in Sources */,
 				30E9A550241632AB00A8B6CE /* UIColor+JM.m in Sources */,

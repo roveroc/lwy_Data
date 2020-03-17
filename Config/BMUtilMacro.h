@@ -15,7 +15,7 @@
 
 /************************************BASEURL************************************/
 
-#define DEF_NETPATH_BASEURL  @"https://www.xiyoucts.com"  //测试环境地址
+#define DEF_NETPATH_BASEURL  @"http://192.168.110.134:8888/"  //测试环境地址
 #define DEF_NETIMGPATH_BASEURL  @"https://int.xiyoucts.com/xiyou/"  //测试环境地址
 //#define DEF_NETPATH_BASEURL  @"http://192.168.5.184:"  //测试环境地址
 

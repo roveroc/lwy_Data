@@ -210,8 +210,10 @@
              ] ;
             [headView addSubview:button];
             
-            
-            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(82), DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
+            int h_gap_1 = 0;
+            if(page == 0)
+                h_gap_1 = 15;
+            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(index * DEF_SCREEN_WIDTH/3, page  * (AdaptedWidth(size) + AdaptedHeight(30))+AdaptedHeight(82)+h_gap_1, DEF_SCREEN_WIDTH/3, AdaptedWidth(25))];
             label.textAlignment = NSTextAlignmentCenter;
             label.text = titleArr[i];
             label.font = [UIFont systemFontOfSize:15];

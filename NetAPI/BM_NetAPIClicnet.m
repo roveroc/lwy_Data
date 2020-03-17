@@ -28,16 +28,27 @@
     if (!self) {
         return nil;
     }
-//    self.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions: NSJSONReadingMutableContainers];
-
-    self.responseSerializer = [AFJSONResponseSerializer serializer];
-    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/html", @"text/javascript", @"text/json",@"text/plain; charset=utf-8",nil];
-    //[self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [self.requestSerializer setValue:[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] forHTTPHeaderField:@"token"];
-  //  [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    self.requestSerializer.timeoutInterval = 10;
+     
     
-//    self.securityPolicy.allowInvalidCertificates = YES;
+//    self.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions: NSJSONReadingMutableContainers];
+//
+//    self.responseSerializer = [AFJSONResponseSerializer serializer];
+//    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",nil];
+//    //[self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+////    [self.requestSerializer setValue:[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] forHTTPHeaderField:@"token"];
+//  //  [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    self.requestSerializer.timeoutInterval = 10;
+//
+////    self.securityPolicy.allowInvalidCertificates = YES;
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
     
     return self;
 }

@@ -10,8 +10,14 @@
 #import <Masonry.h>
 #import "BMUtilMacro.h"
 #import "UIColor+JM.h"
+#import "BM_NetAPIClicnet.h"
+#import "Tools.h"
 
 @interface LoginViewController ()
+
+@property (nonatomic, strong) NSString      *phoneString;
+@property (nonatomic, strong) NSString      *codeString;
+@property (nonatomic, strong) NSString      *net_codeString;
 
 @end
 
@@ -75,6 +81,7 @@
         make.width.mas_equalTo(DEF_SCREEN_WIDTH - 80);
         make.height.mas_equalTo(40);
     }];
+    phoneFiled.tag = 10;
     phoneFiled.placeholder = @"请输入你的手机号";
     
     UIImageView *lineImg = [[UIImageView alloc] init];
@@ -106,6 +113,7 @@
         make.width.mas_equalTo(DEF_SCREEN_WIDTH - 100);
         make.height.mas_equalTo(40);
     }];
+    codeFiled.tag = 11;
     codeFiled.placeholder = @"请输入验证码";
     
     UIButton *codebtn = [[UIButton alloc] init];
@@ -160,14 +168,70 @@
 #pragma mark -------- 获取验证码
 - (void)codeBtnClicked:(id)sender
 {
-    
+    NSString *path = [DEF_NETPATH_BASEURL stringByAppendingString:@"api/account/sendCode"];
+    NSDictionary * params = @{@"phone":@"13502810641"};
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+
+    [manager POST:path parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+
+    }
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+    {
+        
+        if([responseObject isKindOfClass:[NSDictionary class]])
+        {
+            NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            NSLog(@"responseObject = %@",responseJSON);
+        }
+    }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+    {
+        NSLog(@"error = %@",error);
+    }];
 }
 
 
 #pragma mark -------- 登入
 - (void)loginBtnClicked:(id)sender
 {
-    
+    if([Tools isValidateTel:self.phoneString])
+    {
+        
+    }
+    else{
+        [Tools showMessage:@"请输入正确的验证码"];
+    }
+}
+
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+ 
+    if (textField.tag == 10)
+    {
+        self.phoneString = textField.text;
+    }
+    else if (textField.tag == 11)
+    {
+        self.codeString = textField.text;
+    }
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ([textField.text isEqualToString:@"请输入你的手机号"]) {
+        self.phoneString = @"";
+    }
+    if ([textField.text isEqualToString:@"请输入验证码"]) {
+        self.codeString = @"";
+    }
+    return YES;
 }
 
 
