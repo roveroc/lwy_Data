@@ -45,6 +45,9 @@
 		30467EB6241B85910098A35B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30467EB4241B85910098A35B /* LoginViewController.m */; };
 		30467EB7241B85910098A35B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30467EB5241B85910098A35B /* LoginViewController.xib */; };
 		3073F8FB2420681A00F1F726 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3073F8F92420681A00F1F726 /* Tools.m */; };
+		3073F8FF24206DF700F1F726 /* MBProgressHUD+JDragon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3073F8FC24206DF700F1F726 /* MBProgressHUD+JDragon.m */; };
+		3073F90024206DF700F1F726 /* MBProgressHUD+JDragon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3073F8FD24206DF700F1F726 /* MBProgressHUD+JDragon.bundle */; };
+		3073F9042420740400F1F726 /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 3073F9032420740400F1F726 /* UserDefault.m */; };
 		30E649102417288900AF5338 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6490E2417288900AF5338 /* UIColor+Hex.m */; };
 		30E649132417332300AF5338 /* tempimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E649122417332300AF5338 /* tempimage.png */; };
 		30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E64917241763C300AF5338 /* DetailOneViewController.m */; };
@@ -145,6 +148,11 @@
 		30467EB5241B85910098A35B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3073F8F92420681A00F1F726 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		3073F8FA2420681A00F1F726 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		3073F8FC24206DF700F1F726 /* MBProgressHUD+JDragon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+JDragon.m"; sourceTree = "<group>"; };
+		3073F8FD24206DF700F1F726 /* MBProgressHUD+JDragon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "MBProgressHUD+JDragon.bundle"; sourceTree = "<group>"; };
+		3073F8FE24206DF700F1F726 /* MBProgressHUD+JDragon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+JDragon.h"; sourceTree = "<group>"; };
+		3073F9022420740400F1F726 /* UserDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefault.h; sourceTree = "<group>"; };
+		3073F9032420740400F1F726 /* UserDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefault.m; sourceTree = "<group>"; };
 		30E6490E2417288900AF5338 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		30E6490F2417288900AF5338 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		30E649122417332300AF5338 /* tempimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempimage.png; sourceTree = "<group>"; };
@@ -344,6 +352,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		3073F9012420705A00F1F726 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				3073F9022420740400F1F726 /* UserDefault.h */,
+				3073F9032420740400F1F726 /* UserDefault.m */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
 		30E649112417331200AF5338 /* ImageResouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +414,7 @@
 		30E9A4C72416235600A8B6CE = {
 			isa = PBXGroup;
 			children = (
+				3073F9012420705A00F1F726 /* UserDefault */,
 				3073F8F82420680000F1F726 /* Tools */,
 				300E355B241A119800358432 /* PaySDK */,
 				300E3540241A0BE500358432 /* NetAPI */,
@@ -575,6 +593,9 @@
 				30E9A54B241632AB00A8B6CE /* UIView+JM.m */,
 				30E6490F2417288900AF5338 /* UIColor+Hex.h */,
 				30E6490E2417288900AF5338 /* UIColor+Hex.m */,
+				3073F8FD24206DF700F1F726 /* MBProgressHUD+JDragon.bundle */,
+				3073F8FE24206DF700F1F726 /* MBProgressHUD+JDragon.h */,
+				3073F8FC24206DF700F1F726 /* MBProgressHUD+JDragon.m */,
 			);
 			path = SomeCategory;
 			sourceTree = "<group>";
@@ -702,6 +723,7 @@
 				30467EB7241B85910098A35B /* LoginViewController.xib in Resources */,
 				30E9A5492416317F00A8B6CE /* OrderViewController.xib in Resources */,
 				300E352D2418BA7A00358432 /* DetailModeTowViewController.xib in Resources */,
+				3073F90024206DF700F1F726 /* MBProgressHUD+JDragon.bundle in Resources */,
 				30E9A516241628B700A8B6CE /* BaseViewController.xib in Resources */,
 				303F6660241F5B3F00FB60CE /* ShowServiceViewController.xib in Resources */,
 				30E649132417332300AF5338 /* tempimage.png in Resources */,
@@ -779,10 +801,12 @@
 				30E6491F2417654E00AF5338 /* ScreenView.m in Sources */,
 				30E64919241763C300AF5338 /* DetailOneViewController.m in Sources */,
 				30467EB6241B85910098A35B /* LoginViewController.m in Sources */,
+				3073F8FF24206DF700F1F726 /* MBProgressHUD+JDragon.m in Sources */,
 				30E9A515241628B700A8B6CE /* BaseViewController.m in Sources */,
 				30E9A5102416288F00A8B6CE /* BaseNavigationController.m in Sources */,
 				30E9A4DB2416235600A8B6CE /* ViewController.m in Sources */,
 				300E35392419D7A000358432 /* MakeOrderView.m in Sources */,
+				3073F9042420740400F1F726 /* UserDefault.m in Sources */,
 				300E352C2418BA7A00358432 /* DetailModeTowViewController.m in Sources */,
 				300E352624188C9200358432 /* CommentModel.m in Sources */,
 				300E35312418CB9200358432 /* PriceModel.m in Sources */,

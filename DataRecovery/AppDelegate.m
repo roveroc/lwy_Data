@@ -15,6 +15,7 @@
 #import "BaseViewController.h"
 #import "BaseTabBarController.h"
 #import "BaseNavigationController.h"
+#import "UserDefault.h"
 
 
 @interface AppDelegate ()
@@ -70,6 +71,10 @@
     self.window.rootViewController = self.tabbar;
         
     [self.window makeKeyAndVisible];
+    
+    NSDictionary *loginValue = [NSDictionary dictionaryWithObjectsAndKeys:@"false", @"isLoginString",nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:loginValue];
+    
     
     return YES;
 }

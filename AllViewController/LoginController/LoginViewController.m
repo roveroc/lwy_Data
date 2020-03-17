@@ -12,6 +12,7 @@
 #import "UIColor+JM.h"
 #import "BM_NetAPIClicnet.h"
 #import "Tools.h"
+#import "MBProgressHUD+JDragon.h"
 
 @interface LoginViewController ()
 
@@ -34,8 +35,6 @@
         make.width.mas_equalTo(30);
         make.height.mas_equalTo(30);
     }];
-//    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-//    cancelBtn.backgroundColor = [UIColor colorWithHexString:@"FFB90F"];
     [cancelBtn setBackgroundImage:[UIImage imageNamed:@"closeImg.png"] forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(cancelBtnCliked:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -187,13 +186,15 @@
         
         if([responseObject isKindOfClass:[NSDictionary class]])
         {
-            NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-            NSLog(@"responseObject = %@",responseJSON);
+            NSDictionary *responseJSON = (NSDictionary *)responseObject;
+            self.net_codeString = responseJSON[@"data"];
+            NSLog(@"获取到的验证码 = %@",self.net_codeString);
+            
         }
     }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
     {
-        NSLog(@"error = %@",error);
+            NSLog(@"error = %@",error);
     }];
 }
 
@@ -203,11 +204,22 @@
 {
     if([Tools isValidateTel:self.phoneString])
     {
-        
+        if([self.net_codeString isEqualToString:self.codeString])
+        {
+            //登入成功
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+        else
+        {
+            [MBProgressHUD showTipMessageInWindow:@"请输入正确的验证码"];
+        }
     }
-    else{
-        [Tools showMessage:@"请输入正确的验证码"];
+    else
+    {
+        [MBProgressHUD showTipMessageInWindow:@"请输入正确的手机号"];
     }
+    
 }
 
 
